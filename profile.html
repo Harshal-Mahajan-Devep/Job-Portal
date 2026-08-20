@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="mr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NexusJobs - User Profile</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Remix Icon CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-theme="dark">
+    <!-- Ambient Glow Effects -->
+    <div class="ambient-glow glow-top-left"></div>
+    <div class="ambient-glow glow-top-right"></div>
+
+    <!-- Header -->
+    <header class="navbar-header">
+      <div class="brand">
+        <div class="brand-icon"><i class="ri-user-6-fill"></i></div>
+        <span>Nexus<strong>Profile</strong></span>
+      </div>
+
+      <div class="header-actions">
+        <button id="theme-btn" class="icon-btn" aria-label="Toggle Theme">
+          <i class="ri-sun-line" id="theme-icon"></i>
+        </button>
+        <button
+          class="icon-btn"
+          id="open-edit-profile-icon"
+          aria-label="Settings"
+        >
+          <i class="ri-settings-4-line"></i>
+        </button>
+      </div>
+    </header>
+
+    <main class="content-wrapper">
+      <!-- Profile Header Card -->
+      <section class="profile-hero-card">
+        <div class="profile-main-info">
+          <div class="profile-avatar-container">
+            <img
+              id="user-avatar-img"
+              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=250&auto=format&fit=crop&q=80"
+              alt="Profile Picture"
+              class="profile-avatar-img"
+            />
+            <button
+              class="avatar-edit-btn"
+              id="btn-change-avatar"
+              aria-label="Change Avatar"
+            >
+              <i class="ri-camera-lens-line"></i>
+            </button>
+          </div>
+
+          <div class="profile-text-info">
+            <div class="name-badge-wrap">
+              <h2 id="display-user-name">Harshal Mahajan</h2>
+              <span class="pro-badge"
+                ><i class="ri-checkbox-circle-fill"></i> Verified Pro</span
+              >
+            </div>
+            <p class="profile-role" id="display-user-role">
+              Full Stack & AI Engineer
+            </p>
+            <p class="profile-location">
+              <i class="ri-map-pin-2-line"></i>
+              <span id="display-user-location">Pune, India</span>
+              <span class="dot">•</span>
+              <span class="availability-status"
+                ><span class="pulse-dot"></span> Open to Roles</span
+              >
+            </p>
+          </div>
+
+          <button class="edit-profile-btn" id="btn-open-edit-profile">
+            <i class="ri-edit-line"></i> Edit Profile
+          </button>
+        </div>
+
+        <!-- Profile Strength Meter -->
+        <div class="profile-strength-bar">
+          <div class="strength-info">
+            <span
+              >Profile Strength:
+              <strong id="strength-percentage">85%</strong></span
+            >
+            <span class="strength-hint" id="strength-hint"
+              >Add more skills & experience to reach 100%</span
+            >
+          </div>
+          <div class="progress-track">
+            <div
+              class="progress-fill"
+              id="strength-progress-fill"
+              style="width: 85%"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quick Metrics Ticker -->
+      <div class="stats-ticker">
+        <div class="stat-card">
+          <div class="stat-icon-wrapper purple">
+            <i class="ri-eye-line"></i>
+          </div>
+          <div>
+            <h4>1.4k</h4>
+            <p>Profile Views</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon-wrapper green">
+            <i class="ri-search-eye-line"></i>
+          </div>
+          <div>
+            <h4>32</h4>
+            <p>Recruiter Inquiries</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon-wrapper blue">
+            <i class="ri-send-plane-line"></i>
+          </div>
+          <div>
+            <h4>06</h4>
+            <p>Active Applications</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resume & Documents Section -->
+      <section class="explore-section">
+        <div class="feed-header">
+          <h2>Resume & Documents</h2>
+          <button class="action-text-btn" id="btn-open-resume-modal">
+            <i class="ri-upload-cloud-2-line"></i> Upload / Replace
+          </button>
+        </div>
+
+        <div class="resume-card" id="resume-display-card">
+          <div class="resume-icon-box">
+            <i class="ri-file-pdf-2-line"></i>
+          </div>
+          <div class="resume-details">
+            <h4 id="resume-filename">Harshal_FullStack_Resume_2026.pdf</h4>
+            <p id="resume-filemeta">PDF • 1.2 MB • Updated Recently</p>
+          </div>
+          <div class="resume-actions">
+            <button
+              class="action-round-btn"
+              id="btn-download-resume"
+              title="Download Resume"
+            >
+              <i class="ri-download-2-line"></i>
+            </button>
+            <button
+              class="action-round-btn"
+              id="btn-quick-replace-resume"
+              title="Replace Resume"
+            >
+              <i class="ri-refresh-line"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technical Skills Section -->
+      <section class="explore-section">
+        <div class="feed-header">
+          <h2>Technical Skills</h2>
+          <button class="action-text-btn" id="btn-open-skill-modal">
+            <i class="ri-add-line"></i> Add Skill
+          </button>
+        </div>
+
+        <div class="tags-row skills-tag-group" id="skills-container">
+          <span class="tag tag-accent"
+            >React.js <i class="ri-close-line remove-tag-icon"></i
+          ></span>
+          <span class="tag tag-accent"
+            >Next.js 14 <i class="ri-close-line remove-tag-icon"></i
+          ></span>
+          <span class="tag tag-accent"
+            >TypeScript <i class="ri-close-line remove-tag-icon"></i
+          ></span>
+          <span class="tag"
+            >Node.js <i class="ri-close-line remove-tag-icon"></i
+          ></span>
+          <span class="tag"
+            >Python <i class="ri-close-line remove-tag-icon"></i
+          ></span>
+          <span class="tag"
+            >Tailwind CSS <i class="ri-close-line remove-tag-icon"></i
+          ></span>
+          <span class="tag"
+            >PostgreSQL <i class="ri-close-line remove-tag-icon"></i
+          ></span>
+          <span class="tag"
+            >Docker <i class="ri-close-line remove-tag-icon"></i
+          ></span>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section class="explore-section">
+        <div class="feed-header">
+          <h2>Work Experience</h2>
+          <button class="action-text-btn" id="btn-open-exp-modal">
+            <i class="ri-add-line"></i> Add Experience
+          </button>
+        </div>
+
+        <div class="experience-timeline" id="experience-container">
+          <!-- Experience Item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="exp-header">
+                <div>
+                  <h3 class="exp-role-title">Senior Full Stack Developer</h3>
+                  <p class="exp-company">
+                    Synthetix AI <span class="dot">•</span> Full-time
+                  </p>
+                </div>
+                <span class="exp-duration">2024 — Present</span>
+              </div>
+              <p class="exp-desc">
+                Leading Next.js web application architecture, building scalable
+                RESTful microservices, and integrating Generative AI pipelines
+                for predictive analytics.
+              </p>
+            </div>
+          </div>
+
+          <!-- Experience Item 2 -->
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="exp-header">
+                <div>
+                  <h3 class="exp-role-title">Frontend Engineer</h3>
+                  <p class="exp-company">
+                    TechCraft Solutions <span class="dot">•</span> Remote
+                  </p>
+                </div>
+                <span class="exp-duration">2022 — 2024</span>
+              </div>
+              <p class="exp-desc">
+                Designed responsive user interfaces using React, Redux Toolkit,
+                and Tailwind CSS. Improved Web Vitals score by 35%.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= MODALS ================= -->
+    <div class="modal-overlay" id="modal-edit-profile">
+      <div class="glass-modal">
+        <div class="modal-header">
+          <h3>Edit Profile</h3>
+          <button class="modal-close-btn" data-close="modal-edit-profile">
+            <i class="ri-close-line"></i>
+          </button>
+        </div>
+        <form id="form-edit-profile" class="modal-form">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input
+              type="text"
+              id="input-fullname"
+              value="Harshal Mahajan"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Headline / Role</label>
+            <input
+              type="text"
+              id="input-role"
+              value="Full Stack & AI Engineer"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Location</label>
+            <input
+              type="text"
+              id="input-location"
+              value="Pune, India"
+              required
+            />
+          </div>
+          <div class="modal-actions">
+            <button
+              type="button"
+              class="btn-cancel"
+              data-close="modal-edit-profile"
+            >
+              Cancel
+            </button>
+            <button type="submit" class="btn-primary-gradient">
+              Save Changes
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-add-skill">
+      <div class="glass-modal">
+        <div class="modal-header">
+          <h3>Add Technical Skill</h3>
+          <button class="modal-close-btn" data-close="modal-add-skill">
+            <i class="ri-close-line"></i>
+          </button>
+        </div>
+        <form id="form-add-skill" class="modal-form">
+          <div class="form-group">
+            <label>Skill Name</label>
+            <input
+              type="text"
+              id="input-skill-name"
+              placeholder="e.g. GraphQL, AWS, Redis..."
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Proficiency</label>
+            <div class="skill-radio-group">
+              <label class="custom-radio">
+                <input
+                  type="radio"
+                  name="skill-level"
+                  value="standard"
+                  checked
+                />
+                <span>Standard</span>
+              </label>
+              <label class="custom-radio">
+                <input type="radio" name="skill-level" value="featured" />
+                <span>Featured / Core</span>
+              </label>
+            </div>
+          </div>
+          <div class="modal-actions">
+            <button
+              type="button"
+              class="btn-cancel"
+              data-close="modal-add-skill"
+            >
+              Cancel
+            </button>
+            <button type="submit" class="btn-primary-gradient">
+              Add Skill
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-add-experience">
+      <div class="glass-modal">
+        <div class="modal-header">
+          <h3>Add Work Experience</h3>
+          <button class="modal-close-btn" data-close="modal-add-experience">
+            <i class="ri-close-line"></i>
+          </button>
+        </div>
+        <form id="form-add-experience" class="modal-form">
+          <div class="form-group">
+            <label>Job Title / Role</label>
+            <input
+              type="text"
+              id="input-exp-role"
+              placeholder="e.g. Lead Backend Engineer"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Company Name & Type</label>
+            <input
+              type="text"
+              id="input-exp-company"
+              placeholder="e.g. Google Labs • Full-time"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Duration / Period</label>
+            <input
+              type="text"
+              id="input-exp-duration"
+              placeholder="e.g. 2023 — Present"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Description & Highlights</label>
+            <textarea
+              id="input-exp-desc"
+              rows="3"
+              placeholder="Explain your core contributions and tech stack used..."
+              required
+            ></textarea>
+          </div>
+          <div class="modal-actions">
+            <button
+              type="button"
+              class="btn-cancel"
+              data-close="modal-add-experience"
+            >
+              Cancel
+            </button>
+            <button type="submit" class="btn-primary-gradient">
+              Save Experience
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-upload-resume">
+      <div class="glass-modal">
+        <div class="modal-header">
+          <h3>Upload Resume</h3>
+          <button class="modal-close-btn" data-close="modal-upload-resume">
+            <i class="ri-close-line"></i>
+          </button>
+        </div>
+        <div class="dropzone-box" id="resume-dropzone">
+          <input
+            type="file"
+            id="resume-file-input"
+            accept=".pdf,.doc,.docx"
+            hidden
+          />
+          <div class="dropzone-content">
+            <i class="ri-upload-cloud-2-line dropzone-icon"></i>
+            <h4>Drag and drop your resume here</h4>
+            <p>Supported formats: PDF, DOCX (Max 5MB)</p>
+            <button
+              type="button"
+              class="btn-browse-file"
+              id="btn-trigger-file-input"
+            >
+              Browse Files
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Dock Navigation -->
+    <nav class="dock-navigation">
+      <div class="dock-wrapper">
+        <a href="index.html" class="dock-item" title="Home">
+          <i class="ri-home-5-fill"></i>
+        </a>
+        <a href="explore.html" class="dock-item" title="Explore">
+          <i class="ri-compass-3-line"></i>
+        </a>
+        <a href="profile.html" class="dock-item dock-center" title="Profile">
+          <i class="ri-user-6-line"></i>
+        </a>
+        <a href="applied.html" class="dock-item" title="Applied">
+          <i class="ri-briefcase-4-line"></i>
+        </a>
+        <a href="saved.html" class="dock-item" title="Saved">
+          <i class="ri-bookmark-3-line"></i>
+        </a>
+        <a href="notifications.html" class="dock-item" title="Notification">
+          <i class="ri-notification-3-fill"></i>
+        </a>
+      </div>
+    </nav>
+
+    <script src="javascript.js"></script>
+  </body>
+</html>

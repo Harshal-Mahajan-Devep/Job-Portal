@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="mr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NexusJobs - Notifications</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Remix Icon CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-theme="dark">
+    <!-- Ambient Glow Effects -->
+    <div class="ambient-glow glow-top-left"></div>
+    <div class="ambient-glow glow-top-right"></div>
+
+    <!-- Header -->
+    <header class="navbar-header">
+      <div class="brand">
+        <div class="brand-icon"><i class="ri-notification-3-fill"></i></div>
+        <span>Nexus<strong>Notifications</strong></span>
+      </div>
+
+      <div class="header-actions">
+        <button id="theme-btn" class="icon-btn" aria-label="Toggle Theme">
+          <i class="ri-sun-line" id="theme-icon"></i>
+        </button>
+        <a href="auth.html" class="login-pill-btn">
+          <i class="ri-user-line"></i>
+          <span>Sign In</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="content-wrapper">
+      <!-- Notifications Hero Header -->
+      <section class="explore-hero">
+        <h1 class="explore-heading">
+          Recent <span class="gradient-text">Activity & Updates</span>
+        </h1>
+        <p class="hero-subtitle">
+          Real-time alerts on your applications, recruiter messages, and hiring
+          schedules.
+        </p>
+      </section>
+
+      <!-- Notification Filter Strip & Quick Actions -->
+      <div class="notifications-action-bar">
+        <div class="filter-strip" style="margin-bottom: 0">
+          <button class="chip active" data-filter="all">
+            All (<span id="notif-count-total">4</span>)
+          </button>
+          <button class="chip" data-filter="unread">
+            Unread (<span id="notif-count-unread">3</span>)
+          </button>
+          <button class="chip" data-filter="interviews">Interviews</button>
+          <button class="chip" data-filter="offers">Offers</button>
+        </div>
+        <button class="mark-read-btn" id="btn-mark-all-read">
+          <i class="ri-check-double-line"></i> Mark all as read
+        </button>
+      </div>
+
+      <!-- Notifications Feed List -->
+      <section class="notifications-feed">
+        <div class="cards-grid" id="notifications-container">
+          <!-- Notification 1: Job Offer (Unread) -->
+          <article
+            class="job-card notification-card unread"
+            data-category="offers"
+          >
+            <div class="notif-top">
+              <div class="notif-icon-box bg-purple">
+                <i class="ri-trophy-fill"></i>
+              </div>
+              <div class="notif-body">
+                <div class="notif-title-row">
+                  <h3>Offer Letter Extended!</h3>
+                  <span class="unread-dot"></span>
+                </div>
+                <p class="notif-desc">
+                  <strong>Synthetix AI</strong> has released your formal offer
+                  letter for the
+                  <strong>Senior Frontend Architect</strong> position with a
+                  package of $195,000 / yr.
+                </p>
+                <div class="notif-footer-row">
+                  <span class="timestamp"
+                    ><i class="ri-time-line"></i> 10 mins ago</span
+                  >
+                  <a href="applied.html" class="notif-action-link">
+                    Review Offer <i class="ri-arrow-right-line"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Notification 2: Interview Scheduled (Unread) -->
+          <article
+            class="job-card notification-card unread"
+            data-category="interviews"
+          >
+            <div class="notif-top">
+              <div class="notif-icon-box bg-emerald">
+                <i class="ri-calendar-event-fill"></i>
+              </div>
+              <div class="notif-body">
+                <div class="notif-title-row">
+                  <h3>Technical Round 2 Confirmed</h3>
+                  <span class="unread-dot"></span>
+                </div>
+                <p class="notif-desc">
+                  Your System Design interview with the Principal Engineering
+                  Director at <strong>Aura Flow</strong> is scheduled for
+                  <strong>Tomorrow at 4:30 PM IST</strong>.
+                </p>
+                <div class="notif-footer-row">
+                  <span class="timestamp"
+                    ><i class="ri-time-line"></i> 2 hours ago</span
+                  >
+                  <a href="applied.html" class="notif-action-link">
+                    View Meeting Details <i class="ri-external-link-line"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Notification 3: Recruiter Profile View (Unread) -->
+          <article
+            class="job-card notification-card unread"
+            data-category="recruiter"
+          >
+            <div class="notif-top">
+              <div class="notif-icon-box gradient-purple">
+                <i class="ri-user-search-line"></i>
+              </div>
+              <div class="notif-body">
+                <div class="notif-title-row">
+                  <h3>Recruiter Viewed Your Profile</h3>
+                  <span class="unread-dot"></span>
+                </div>
+                <p class="notif-desc">
+                  A Senior Technical Recruiter from
+                  <strong>Google Labs</strong> reviewed your resume and verified
+                  full stack credentials.
+                </p>
+                <div class="notif-footer-row">
+                  <span class="timestamp"
+                    ><i class="ri-time-line"></i> 5 hours ago</span
+                  >
+                  <a href="profile.html" class="notif-action-link">
+                    Check Profile Analytics <i class="ri-arrow-right-line"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Notification 4: Application Submitted (Read) -->
+          <article
+            class="job-card notification-card"
+            data-category="applications"
+          >
+            <div class="notif-top">
+              <div
+                class="notif-icon-box"
+                style="
+                  background: var(--tag-bg);
+                  color: var(--text-muted);
+                  border: 1px solid var(--border);
+                "
+              >
+                <i class="ri-send-plane-2-line"></i>
+              </div>
+              <div class="notif-body">
+                <div class="notif-title-row">
+                  <h3>Application Successfully Submitted</h3>
+                </div>
+                <p class="notif-desc">
+                  Your application for
+                  <strong>Full Stack Engineer (L5)</strong> at
+                  <strong>Google Labs</strong> has been received and forwarded
+                  for initial screening.
+                </p>
+                <div class="notif-footer-row">
+                  <span class="timestamp"
+                    ><i class="ri-time-line"></i> 2 days ago</span
+                  >
+                  <span class="tag">Application ID: NX-882910</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bottom Dock Navigation -->
+    <nav class="dock-navigation">
+      <div class="dock-wrapper">
+        <a href="index.html" class="dock-item" title="Home">
+          <i class="ri-home-5-fill"></i>
+        </a>
+        <a href="explore.html" class="dock-item" title="Explore">
+          <i class="ri-compass-3-line"></i>
+        </a>
+        <a href="profile.html" class="dock-item dock-center" title="Profile">
+          <i class="ri-user-6-line"></i>
+        </a>
+        <a href="applied.html" class="dock-item" title="Applied">
+          <i class="ri-briefcase-4-line"></i>
+        </a>
+        <a href="saved.html" class="dock-item" title="Saved">
+          <i class="ri-bookmark-3-line"></i>
+        </a>
+        <a href="notifications.html" class="dock-item" title="Notification">
+          <i class="ri-notification-3-fill"></i>
+        </a>
+      </div>
+    </nav>
+
+    <script src="javascript.js"></script>
+  </body>
+</html>

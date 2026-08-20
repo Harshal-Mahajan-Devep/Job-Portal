@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="mr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NexusJobs - Verify OTP</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Remix Icon CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-theme="dark" class="auth-body">
+    <!-- Ambient Glow Effects -->
+    <div class="ambient-glow glow-top-left"></div>
+    <div class="ambient-glow glow-top-right"></div>
+
+    <!-- Auth Header -->
+    <header class="navbar-header auth-navbar">
+      <a
+        href="index.html"
+        class="brand"
+        style="text-decoration: none; color: inherit"
+      >
+        <div class="brand-icon"><i class="ri-flashlight-fill"></i></div>
+        <span>Nexus<strong>Jobs</strong></span>
+      </a>
+
+      <div class="header-actions">
+        <button id="theme-btn" class="icon-btn" aria-label="Toggle Theme">
+          <i class="ri-sun-line" id="theme-icon"></i>
+        </button>
+      </div>
+    </header>
+
+    <main class="auth-container">
+      <div class="auth-glass-card otp-card">
+        <!-- OTP Channel Switcher (Email / Mobile) -->
+        <div class="auth-tabs" id="otp-tab-bar">
+          <button
+            class="auth-tab-btn active"
+            id="tab-email-otp"
+            data-target="email-otp-section"
+          >
+            <i class="ri-mail-line"></i> Email OTP
+          </button>
+          <button
+            class="auth-tab-btn"
+            id="tab-phone-otp"
+            data-target="phone-otp-section"
+          >
+            <i class="ri-smartphone-line"></i> Mobile OTP
+          </button>
+        </div>
+
+        <!-- =========================================
+             1. EMAIL OTP SECTION
+             ========================================= -->
+        <section id="email-otp-section" class="otp-section active">
+          <div class="auth-header-text">
+            <div class="forgot-icon-pill">
+              <i class="ri-mail-send-line"></i>
+            </div>
+            <h2>Verify Your Email</h2>
+            <p>
+              We have sent a 6-digit Verification Code to you via email:<br />
+              <strong class="user-target-dest">harshal.dev@example.com</strong>
+            </p>
+          </div>
+
+          <form id="form-verify-email-otp" class="otp-form-content">
+            <label class="otp-input-label">Enter 6-Digit Code</label>
+            <div class="otp-inputs-grid" data-otp-group="email">
+              <input
+                type="text"
+                maxlength="1"
+                inputmode="numeric"
+                class="otp-digit"
+                required
+              />
+              <input
+                type="text"
+                maxlength="1"
+                inputmode="numeric"
+                class="otp-digit"
+                required
+              />
+              <input
+                type="text"
+                maxlength="1"
+                inputmode="numeric"
+                class="otp-digit"
+                required
+              />
+              <input
+                type="text"
+                maxlength="1"
+                inputmode="numeric"
+                class="otp-digit"
+                required
+              />
+              <input
+                type="text"
+                maxlength="1"
+                inputmode="numeric"
+                class="otp-digit"
+                required
+              />
+              <input
+                type="text"
+                maxlength="1"
+                inputmode="numeric"
+                class="otp-digit"
+                required
+              />
+            </div>
+
+            <div class="otp-timer-row">
+              <span class="timer-text">
+                Resend Code in: <strong id="email-timer">00:45</strong>
+              </span>
+              <button
+                type="button"
+                class="resend-otp-btn"
+                id="btn-resend-email"
+                disabled
+              >
+                Resend OTP
+              </button>
+            </div>
+
+            <button type="submit" class="btn-primary-gradient auth-submit-btn">
+              Verify & Proceed <i class="ri-checkbox-circle-line"></i>
+            </button>
+          </form>
+        </section>
+
+        <!-- =========================================
+             2. MOBILE SMS OTP SECTION
+             ========================================= -->
+        <section id="phone-otp-section" class="otp-section">
+          <div class="auth-header-text">
+            <div class="forgot-icon-pill">
+              <i class="ri-cellphone-line"></i>
+            </div>
+            <h2>Verify Mobile Number</h2>
+            <p>
+              We have sent a 6-digit Security Code to you via SMS:<br />
+              <strong class="user-target-dest">+91 98765 •••••</strong>
+            </p>
+          </div>
+
+          <form id="form-verify-phone-otp" class="otp-form-content">
+            <label class="otp-input-label">Enter SMS Code</label>
+            <div class="otp-inputs-grid" data-otp-group="phone">
+              <input
+                type="text"
+                maxlength="1"
+                inputmode="numeric"
+                class="otp-digit"
+                required
+              />
+              <input
+                type="text"
+                maxlength="1"
+                inputmode="numeric"
+                class="otp-digit"
+                required
+              />
+              <input
+                type="text"
+                maxlength="1"
+                inputmode="numeric"
+                class="otp-digit"
+                required
+              />
+              <input
+                type="text"
+                maxlength="1"
+                inputmode="numeric"
+                class="otp-digit"
+                required
+              />
+              <input
+                type="text"
+                maxlength="1"
+                inputmode="numeric"
+                class="otp-digit"
+                required
+              />
+              <input
+                type="text"
+                maxlength="1"
+                inputmode="numeric"
+                class="otp-digit"
+                required
+              />
+            </div>
+
+            <div class="otp-timer-row">
+              <span class="timer-text">
+                Resend SMS in: <strong id="phone-timer">00:45</strong>
+              </span>
+              <button
+                type="button"
+                class="resend-otp-btn"
+                id="btn-resend-phone"
+                disabled
+              >
+                Resend SMS
+              </button>
+            </div>
+
+            <button type="submit" class="btn-primary-gradient auth-submit-btn">
+              Verify & Proceed <i class="ri-checkbox-circle-line"></i>
+            </button>
+          </form>
+        </section>
+
+        <!-- Back to Authentication -->
+        <div class="back-to-auth" style="margin-top: 1.5rem">
+          <a href="auth.html" class="back-link-btn">
+            <i class="ri-arrow-left-line"></i> Back to Sign In
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <script src="javascript.js"></script>
+  </body>
+</html>

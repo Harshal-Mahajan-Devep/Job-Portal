@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="mr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NexusJobs - Saved Jobs</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Remix Icon CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-theme="dark">
+    <!-- Ambient Glow Effects -->
+    <div class="ambient-glow glow-top-left"></div>
+    <div class="ambient-glow glow-top-right"></div>
+
+    <!-- Header -->
+    <header class="navbar-header">
+      <div class="brand">
+        <div class="brand-icon"><i class="ri-bookmark-3-fill"></i></div>
+        <span>Nexus<strong>Bookmarks</strong></span>
+      </div>
+
+      <div class="header-actions">
+        <button id="theme-btn" class="icon-btn" aria-label="Toggle Theme">
+          <i class="ri-sun-line" id="theme-icon"></i>
+        </button>
+        <a href="auth.html" class="login-pill-btn">
+          <i class="ri-user-line"></i>
+          <span>Sign In</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="content-wrapper">
+      <!-- Saved Jobs Hero -->
+      <section class="explore-hero">
+        <h1 class="explore-heading">
+          Your Saved <span class="gradient-text">Opportunities</span>
+        </h1>
+        <p class="hero-subtitle">
+          Keep track of high-impact roles, salary ranges, and upcoming
+          application deadlines.
+        </p>
+      </section>
+
+      <!-- Stats Ticker -->
+      <div class="stats-ticker">
+        <div class="stat-card">
+          <div class="stat-icon-wrapper purple">
+            <i class="ri-bookmark-3-line"></i>
+          </div>
+          <div>
+            <h4 id="saved-count">03</h4>
+            <p>Saved Openings</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon-wrapper green">
+            <i class="ri-hourglass-line"></i>
+          </div>
+          <div>
+            <h4>2 Days Left</h4>
+            <p>Nearest Deadline</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon-wrapper blue">
+            <i class="ri-money-dollar-circle-line"></i>
+          </div>
+          <div>
+            <h4>₹28 - 45 LPA</h4>
+            <p>Avg. Expected Comp</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filter / Category Strip -->
+      <section class="filter-strip">
+        <button class="chip active">All Saved (3)</button>
+        <button class="chip">Full Stack</button>
+        <button class="chip">AI / ML</button>
+        <button class="chip">UI/UX Design</button>
+        <button class="chip">Remote Only</button>
+      </section>
+
+      <!-- Saved Cards Grid -->
+      <section class="saved-feed">
+        <div class="cards-grid" id="saved-cards-container">
+          <!-- Saved Job Card 1 -->
+          <article class="job-card saved-card">
+            <div class="card-top">
+              <div class="company-logo bg-purple">
+                <i class="ri-openai-fill"></i>
+              </div>
+              <div class="meta-info">
+                <h3>Staff Backend Engineer (Distributed Systems)</h3>
+                <p>
+                  Synthetix AI <span class="dot">•</span> San Francisco (Remote)
+                </p>
+              </div>
+              <button
+                class="bookmark-btn active-saved"
+                aria-label="Remove Bookmark"
+                title="Remove from saved"
+              >
+                <i class="ri-bookmark-fill"></i>
+              </button>
+            </div>
+
+            <p class="job-desc">
+              Architect resilient microservices, high-throughput vector query
+              engines, and distributed caching solutions for real-time model
+              inferences.
+            </p>
+
+            <div class="tags-row">
+              <span class="tag">Go</span>
+              <span class="tag">Kubernetes</span>
+              <span class="tag">gRPC</span>
+              <span class="tag tag-accent">$190k - $240k</span>
+            </div>
+
+            <div class="card-bottom">
+              <span class="timestamp"
+                ><i class="ri-calendar-event-line"></i> Deadline: Aug 24,
+                2026</span
+              >
+              <button class="apply-cta">
+                Apply Direct <i class="ri-arrow-right-up-line"></i>
+              </button>
+            </div>
+          </article>
+
+          <!-- Saved Job Card 2 -->
+          <article class="job-card saved-card">
+            <div class="card-top">
+              <div class="company-logo gradient-purple">
+                <i class="ri-google-fill"></i>
+              </div>
+              <div class="meta-info">
+                <h3>Lead Design Systems Architect</h3>
+                <p>Google Labs <span class="dot">•</span> Bengaluru / Pune</p>
+              </div>
+              <button
+                class="bookmark-btn active-saved"
+                aria-label="Remove Bookmark"
+                title="Remove from saved"
+              >
+                <i class="ri-bookmark-fill"></i>
+              </button>
+            </div>
+
+            <p class="job-desc">
+              Define the next-gen cross-platform design token architecture,
+              accessible component libraries, and interactive design tools.
+            </p>
+
+            <div class="tags-row">
+              <span class="tag">Figma</span>
+              <span class="tag">Design Tokens</span>
+              <span class="tag">React</span>
+              <span class="tag tag-accent">₹45 - 60 LPA</span>
+            </div>
+
+            <div class="card-bottom">
+              <span class="timestamp"
+                ><i class="ri-calendar-event-line"></i> Deadline: Aug 29,
+                2026</span
+              >
+              <button class="apply-cta">
+                Apply Direct <i class="ri-arrow-right-up-line"></i>
+              </button>
+            </div>
+          </article>
+
+          <!-- Saved Job Card 3 -->
+          <article class="job-card saved-card">
+            <div class="card-top">
+              <div class="company-logo bg-emerald">
+                <i class="ri-meta-fill"></i>
+              </div>
+              <div class="meta-info">
+                <h3>Full Stack AI Application Engineer</h3>
+                <p>
+                  Meta Platform <span class="dot">•</span> Hyderabad / Remote
+                </p>
+              </div>
+              <button
+                class="bookmark-btn active-saved"
+                aria-label="Remove Bookmark"
+                title="Remove from saved"
+              >
+                <i class="ri-bookmark-fill"></i>
+              </button>
+            </div>
+
+            <p class="job-desc">
+              Build high-performance multimodal web interfaces powered by LLaMA
+              foundation models and WebAssembly compute runtimes.
+            </p>
+
+            <div class="tags-row">
+              <span class="tag">Next.js</span>
+              <span class="tag">Python</span>
+              <span class="tag">PyTorch</span>
+              <span class="tag tag-accent">₹38 - 52 LPA</span>
+            </div>
+
+            <div class="card-bottom">
+              <span class="timestamp"
+                ><i class="ri-calendar-event-line"></i> Deadline: Sep 02,
+                2026</span
+              >
+              <button class="apply-cta">
+                Apply Direct <i class="ri-arrow-right-up-line"></i>
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- Floating Island Bottom Navigation -->
+    <nav class="dock-navigation">
+      <div class="dock-wrapper">
+        <a href="index.html" class="dock-item" title="Home">
+          <i class="ri-home-5-fill"></i>
+        </a>
+        <a href="explore.html" class="dock-item" title="Explore">
+          <i class="ri-compass-3-line"></i>
+        </a>
+        <a href="profile.html" class="dock-item dock-center" title="Profile">
+          <i class="ri-user-6-line"></i>
+        </a>
+        <a href="applied.html" class="dock-item" title="Applied">
+          <i class="ri-briefcase-4-line"></i>
+        </a>
+        <a href="saved.html" class="dock-item" title="Saved">
+          <i class="ri-bookmark-3-line"></i>
+        </a>
+        <a href="notifications.html" class="dock-item" title="Notification">
+          <i class="ri-notification-3-fill"></i>
+        </a>
+      </div>
+    </nav>
+
+    <script src="javascript.js"></script>
+  </body>
+</html>

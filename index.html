@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="mr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NexusJobs - Premium Career Portal</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Remix Icon CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-theme="dark">
+    <!-- Ambient Glow Effects -->
+    <div class="ambient-glow glow-top-left"></div>
+    <div class="ambient-glow glow-top-right"></div>
+
+    <!-- Header -->
+    <header class="navbar-header">
+      <div class="brand">
+        <div class="brand-icon"><i class="ri-flashlight-fill"></i></div>
+        <span>Nexus<strong>Jobs</strong></span>
+      </div>
+
+      <div class="header-actions">
+        <button id="theme-btn" class="icon-btn" aria-label="Toggle Theme">
+          <i class="ri-sun-line" id="theme-icon"></i>
+        </button>
+        <a href="auth.html" class="login-pill-btn">
+          <i class="ri-user-line"></i>
+          <span>Sign In</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="content-wrapper">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="badge-pill">
+          <span class="pulse-dot"></span> 2,400+ Remote Jobs Live Today
+        </div>
+        <h1 class="hero-title">
+          Discover your next <span class="gradient-text">career leap</span>.
+        </h1>
+        <p class="hero-subtitle">
+          Curated elite engineering, design & product roles across high-growth
+          tech teams.
+        </p>
+
+        <!-- Search Island -->
+        <div class="search-island">
+          <!-- Field 1: Role / Skill -->
+          <div class="search-field-wrapper">
+            <div class="search-field">
+              <i class="ri-search-2-line"></i>
+              <input
+                type="text"
+                id="job-input"
+                placeholder="Title, tech stack, keyword..."
+                autocomplete="off"
+              />
+              <i class="ri-arrow-down-s-line dropdown-arrow"></i>
+            </div>
+            <div class="search-dropdown">
+              <div class="dropdown-category">Popular Roles</div>
+              <div class="dropdown-item" data-val="Full Stack Developer">
+                <i class="ri-code-box-line"></i>
+                <div class="item-text">
+                  <strong>Full Stack Developer</strong>
+                  <span>1,200+ Openings</span>
+                </div>
+              </div>
+              <div
+                class="dropdown-item"
+                data-val="AI / Machine Learning Engineer"
+              >
+                <i class="ri-brain-line"></i>
+                <div class="item-text">
+                  <strong>AI / ML Engineer</strong>
+                  <span>850+ Openings</span>
+                </div>
+              </div>
+              <div class="dropdown-item" data-val="UI/UX Product Designer">
+                <i class="ri-paint-brush-line"></i>
+                <div class="item-text">
+                  <strong>UI/UX Designer</strong>
+                  <span>430+ Openings</span>
+                </div>
+              </div>
+              <div class="dropdown-item" data-val="DevOps & Cloud Engineer">
+                <i class="ri-cloud-line"></i>
+                <div class="item-text">
+                  <strong>DevOps Engineer</strong>
+                  <span>310+ Openings</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Field 2: Location -->
+          <div class="search-field-wrapper">
+            <div class="search-field">
+              <i class="ri-map-pin-2-line"></i>
+              <input
+                type="text"
+                id="loc-input"
+                placeholder="Location or 'Remote'"
+                autocomplete="off"
+              />
+              <i class="ri-arrow-down-s-line dropdown-arrow"></i>
+            </div>
+            <div class="search-dropdown">
+              <div class="dropdown-category">Top Locations</div>
+              <div class="dropdown-item" data-val="Pune, Maharashtra">
+                <i class="ri-building-2-line"></i>
+                <div class="item-text">
+                  <strong>Pune</strong>
+                  <span>Maharashtra</span>
+                </div>
+              </div>
+              <div class="dropdown-item" data-val="Mumbai, Maharashtra">
+                <i class="ri-building-line"></i>
+                <div class="item-text">
+                  <strong>Mumbai</strong>
+                  <span>Maharashtra</span>
+                </div>
+              </div>
+              <div class="dropdown-item" data-val="Bengaluru, Karnataka">
+                <i class="ri-building-4-line"></i>
+                <div class="item-text">
+                  <strong>Bengaluru</strong>
+                  <span>Karnataka</span>
+                </div>
+              </div>
+              <div class="dropdown-item" data-val="Remote Only">
+                <i class="ri-global-line"></i>
+                <div class="item-text">
+                  <strong>Remote (Worldwide / India)</strong>
+                  <span>Work from anywhere</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button
+            class="search-trigger"
+            id="btn-search-action"
+            aria-label="Search"
+          >
+            <i class="ri-arrow-right-line"></i>
+          </button>
+        </div>
+      </section>
+
+      <!-- Filter Strip -->
+      <section class="filter-strip">
+        <button class="chip active">All Roles</button>
+        <button class="chip">Full Stack</button>
+        <button class="chip">AI & ML</button>
+        <button class="chip">Product Design</button>
+        <button class="chip">DevOps</button>
+        <button class="chip">Remote Only</button>
+      </section>
+
+      <!-- Featured Job Feed -->
+      <section class="job-feed">
+        <div class="feed-header">
+          <h2>Featured Openings</h2>
+          <a href="explore.html" class="view-all"
+            >Explore all <i class="ri-arrow-right-up-line"></i
+          ></a>
+        </div>
+
+        <!-- Initial Post Loader Skeleton -->
+        <div class="cards-grid skeleton-loader-wrapper" id="job-feed-skeleton">
+          <div class="job-card skeleton-card">
+            <div class="card-top">
+              <div class="skeleton-box skeleton-avatar"></div>
+              <div class="meta-info">
+                <div class="skeleton-box skeleton-title"></div>
+                <div class="skeleton-box skeleton-subtitle"></div>
+              </div>
+              <div class="skeleton-box skeleton-icon"></div>
+            </div>
+            <div class="skeleton-box skeleton-text"></div>
+            <div class="skeleton-box skeleton-text short"></div>
+            <div class="tags-row">
+              <div class="skeleton-box skeleton-tag"></div>
+              <div class="skeleton-box skeleton-tag"></div>
+              <div class="skeleton-box skeleton-tag"></div>
+            </div>
+            <div class="card-bottom">
+              <div class="skeleton-box skeleton-btn"></div>
+              <div class="skeleton-box skeleton-btn"></div>
+            </div>
+          </div>
+
+          <div class="job-card skeleton-card">
+            <div class="card-top">
+              <div class="skeleton-box skeleton-avatar"></div>
+              <div class="meta-info">
+                <div class="skeleton-box skeleton-title"></div>
+                <div class="skeleton-box skeleton-subtitle"></div>
+              </div>
+              <div class="skeleton-box skeleton-icon"></div>
+            </div>
+            <div class="skeleton-box skeleton-text"></div>
+            <div class="skeleton-box skeleton-text short"></div>
+            <div class="tags-row">
+              <div class="skeleton-box skeleton-tag"></div>
+              <div class="skeleton-box skeleton-tag"></div>
+              <div class="skeleton-box skeleton-tag"></div>
+            </div>
+            <div class="card-bottom">
+              <div class="skeleton-box skeleton-btn"></div>
+              <div class="skeleton-box skeleton-btn"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Actual Feed Container -->
+        <div class="cards-grid" id="job-feed-content" style="display: none">
+          <!-- Job Card 1 -->
+          <article class="job-card">
+            <div class="card-top">
+              <div class="company-logo bg-purple">
+                <i class="ri-openai-fill"></i>
+              </div>
+              <div class="meta-info">
+                <h3>Senior Frontend Architect</h3>
+                <p>
+                  Synthetix AI <span class="dot">•</span> San Francisco (Remote)
+                </p>
+              </div>
+              <button class="bookmark-btn" aria-label="Bookmark">
+                <i class="ri-bookmark-line"></i>
+              </button>
+            </div>
+
+            <p class="job-desc">
+              Lead Next.js micro-frontends, high-performance WebGL visualizers,
+              and scalable design systems.
+            </p>
+
+            <div class="tags-row">
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">WebGL</span>
+              <span class="tag tag-accent">$180k - $230k</span>
+            </div>
+
+            <div class="card-bottom">
+              <span class="timestamp"><i class="ri-time-line"></i> 2h ago</span>
+              <a href="job-details.html" class="apply-cta">
+                Apply Direct <i class="ri-arrow-right-up-line"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Job Card 2 -->
+          <article class="job-card">
+            <div class="card-top">
+              <div class="company-logo bg-emerald">
+                <i class="ri-spotify-fill"></i>
+              </div>
+              <div class="meta-info">
+                <h3>Principal UX Strategist</h3>
+                <p>Aura Flow <span class="dot">•</span> Bangalore / Hybrid</p>
+              </div>
+              <button class="bookmark-btn" aria-label="Bookmark">
+                <i class="ri-bookmark-line"></i>
+              </button>
+            </div>
+
+            <p class="job-desc">
+              Craft next-generation spatial interfaces, mobile design systems,
+              and AI-assisted workflows.
+            </p>
+
+            <div class="tags-row">
+              <span class="tag">Figma</span>
+              <span class="tag">Prototyping</span>
+              <span class="tag">Design System</span>
+              <span class="tag tag-accent">₹35 - 50 LPA</span>
+            </div>
+
+            <div class="card-bottom">
+              <span class="timestamp"><i class="ri-time-line"></i> 5h ago</span>
+              <a href="job-details.html" class="apply-cta">
+                Apply Direct <i class="ri-arrow-right-up-line"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- ================= MORE POSTS (LOAD MORE) ACTION ================= -->
+        <div class="load-more-container" id="load-more-section">
+          <button class="load-more-btn" id="btn-load-more">
+            <span class="btn-text">Load More Openings</span>
+            <i class="ri-arrow-down-line"></i>
+            <span class="loader-spinner" style="display: none"></span>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bottom Dock Navigation -->
+    <nav class="dock-navigation">
+      <div class="dock-wrapper">
+        <a href="index.html" class="dock-item" title="Home">
+          <i class="ri-home-5-fill"></i>
+        </a>
+        <a href="explore.html" class="dock-item" title="Explore">
+          <i class="ri-compass-3-line"></i>
+        </a>
+        <a href="profile.html" class="dock-item dock-center" title="Profile">
+          <i class="ri-user-6-line"></i>
+        </a>
+        <a href="applied.html" class="dock-item" title="Applied">
+          <i class="ri-briefcase-4-line"></i>
+        </a>
+        <a href="saved.html" class="dock-item" title="Saved">
+          <i class="ri-bookmark-3-line"></i>
+        </a>
+        <a href="notifications.html" class="dock-item" title="Notification">
+          <i class="ri-notification-3-fill"></i>
+        </a>
+      </div>
+    </nav>
+
+    <script src="javascript.js"></script>
+  </body>
+</html>

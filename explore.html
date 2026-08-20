@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="mr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NexusJobs - Explore Companies & Roles</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Remix Icon CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-theme="dark">
+    <!-- Ambient Glows -->
+    <div class="ambient-glow glow-top-left"></div>
+    <div class="ambient-glow glow-top-right"></div>
+
+    <!-- Header -->
+    <header class="navbar-header">
+      <div class="brand">
+        <div class="brand-icon"><i class="ri-compass-3-fill"></i></div>
+        <span>Explore<strong>Nexus</strong></span>
+      </div>
+
+      <div class="header-actions">
+        <button id="theme-btn" class="icon-btn" aria-label="Toggle Theme">
+          <i class="ri-sun-line" id="theme-icon"></i>
+        </button>
+        <a href="auth.html" class="login-pill-btn">
+          <i class="ri-user-line"></i>
+          <span>Sign In</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="content-wrapper">
+      <!-- Explore Header -->
+      <div class="explore-hero">
+        <h1 class="explore-heading">
+          Explore <span class="gradient-text">Top Companies</span> & Hubs
+        </h1>
+        <p class="hero-subtitle">
+          Discover top tech companies, salary trends, and the most in-demand
+          skills.
+        </p>
+      </div>
+
+      <!-- Quick Stat Banners -->
+      <div class="stats-ticker">
+        <div class="stat-card">
+          <div class="stat-icon-wrapper blue">
+            <i class="ri-building-line"></i>
+          </div>
+          <div>
+            <h4>850+</h4>
+            <p>Hiring Companies</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon-wrapper green">
+            <i class="ri-funds-line"></i>
+          </div>
+          <div>
+            <h4>₹18.5 LPA</h4>
+            <p>Average Dev Salary</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon-wrapper purple">
+            <i class="ri-global-line"></i>
+          </div>
+          <div>
+            <h4>65%</h4>
+            <p>Remote Roles</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trending Tech Stacks -->
+      <section class="explore-section">
+        <div class="feed-header">
+          <h2>Trending Tech Stacks</h2>
+          <span class="view-all"
+            >Updated Today <i class="ri-refresh-line"></i
+          ></span>
+        </div>
+
+        <div class="trending-grid">
+          <div class="bento-card">
+            <div class="bento-icon"><i class="ri-code-box-line"></i></div>
+            <div class="bento-content">
+              <h3>Full Stack & Next.js</h3>
+              <span>420+ Open Positions</span>
+            </div>
+            <span class="trend-badge positive"
+              ><i class="ri-arrow-up-line"></i> 18%</span
+            >
+          </div>
+
+          <div class="bento-card">
+            <div class="bento-icon"><i class="ri-brain-line"></i></div>
+            <div class="bento-content">
+              <h3>LLMs & AI Engineering</h3>
+              <span>310+ Open Positions</span>
+            </div>
+            <span class="trend-badge positive"
+              ><i class="ri-arrow-up-line"></i> 42%</span
+            >
+          </div>
+
+          <div class="bento-card">
+            <div class="bento-icon"><i class="ri-shield-keyhole-line"></i></div>
+            <div class="bento-content">
+              <h3>Cloud & DevSecOps</h3>
+              <span>190+ Open Positions</span>
+            </div>
+            <span class="trend-badge positive"
+              ><i class="ri-arrow-up-line"></i> 12%</span
+            >
+          </div>
+
+          <div class="bento-card">
+            <div class="bento-icon"><i class="ri-layout-masonry-line"></i></div>
+            <div class="bento-content">
+              <h3>Design Systems (UI/UX)</h3>
+              <span>140+ Open Positions</span>
+            </div>
+            <span class="trend-badge positive"
+              ><i class="ri-arrow-up-line"></i> 8%</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Companies Spotlight -->
+      <section class="explore-section">
+        <div class="feed-header">
+          <h2>Featured Companies</h2>
+          <a href="#" class="view-all"
+            >All Companies <i class="ri-arrow-right-up-line"></i
+          ></a>
+        </div>
+
+        <div class="company-grid">
+          <!-- Company Card 1 -->
+          <div class="company-card">
+            <div class="company-brand-row">
+              <div class="company-avatar gradient-purple">
+                <i class="ri-google-fill"></i>
+              </div>
+              <div class="company-title">
+                <h3>Google Labs</h3>
+                <span class="rating"
+                  ><i class="ri-star-fill"></i> 4.8 (2.4k reviews)</span
+                >
+              </div>
+            </div>
+            <p class="company-desc">
+              Building next generation search, generative AI, and quantum cloud
+              computing ecosystems.
+            </p>
+            <div class="company-meta-row">
+              <span><i class="ri-map-pin-2-line"></i> Bengaluru / Pune</span>
+              <span class="jobs-count-tag">14 Jobs</span>
+            </div>
+          </div>
+
+          <!-- Company Card 2 -->
+          <div class="company-card">
+            <div class="company-brand-row">
+              <div class="company-avatar gradient-emerald">
+                <i class="ri-meta-fill"></i>
+              </div>
+              <div class="company-title">
+                <h3>Meta Platform</h3>
+                <span class="rating"
+                  ><i class="ri-star-fill"></i> 4.7 (1.8k reviews)</span
+                >
+              </div>
+            </div>
+            <p class="company-desc">
+              Connecting billions of users through cutting edge virtual
+              immersion and social products.
+            </p>
+            <div class="company-meta-row">
+              <span><i class="ri-map-pin-2-line"></i> Hyderabad / Remote</span>
+              <span class="jobs-count-tag">9 Jobs</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bottom Dock Navigation -->
+    <nav class="dock-navigation">
+      <div class="dock-wrapper">
+        <a href="index.html" class="dock-item" title="Home">
+          <i class="ri-home-5-fill"></i>
+        </a>
+        <a href="explore.html" class="dock-item" title="Explore">
+          <i class="ri-compass-3-line"></i>
+        </a>
+        <a href="profile.html" class="dock-item dock-center" title="Profile">
+          <i class="ri-user-6-line"></i>
+        </a>
+        <a href="applied.html" class="dock-item" title="Applied">
+          <i class="ri-briefcase-4-line"></i>
+        </a>
+        <a href="saved.html" class="dock-item" title="Saved">
+          <i class="ri-bookmark-3-line"></i>
+        </a>
+        <a href="notifications.html" class="dock-item" title="Notification">
+          <i class="ri-notification-3-fill"></i>
+        </a>
+      </div>
+    </nav>
+
+    <script src="javascript.js"></script>
+  </body>
+</html>

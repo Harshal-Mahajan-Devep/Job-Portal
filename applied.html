@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="mr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NexusJobs - My Applications</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Remix Icon CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-theme="dark">
+    <!-- Ambient Glows -->
+    <div class="ambient-glow glow-top-left"></div>
+    <div class="ambient-glow glow-top-right"></div>
+
+    <!-- Header -->
+    <header class="navbar-header">
+      <div class="brand">
+        <div class="brand-icon"><i class="ri-briefcase-4-fill"></i></div>
+        <span>Nexus<strong>Applications</strong></span>
+      </div>
+
+      <div class="header-actions">
+        <button id="theme-btn" class="icon-btn" aria-label="Toggle Theme">
+          <i class="ri-sun-line" id="theme-icon"></i>
+        </button>
+        <a href="auth.html" class="login-pill-btn">
+          <i class="ri-user-line"></i>
+          <span>Sign In</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="content-wrapper">
+      <!-- Applications Hero / Summary Header -->
+      <section class="explore-hero">
+        <h1 class="explore-heading">
+          Track Your <span class="gradient-text">Applications</span>
+        </h1>
+        <p class="hero-subtitle">
+          Real-time updates on your job applications, interviews, and offer
+          letters.
+        </p>
+      </section>
+
+      <!-- Status Summary Ticker -->
+      <div class="stats-ticker">
+        <div class="stat-card">
+          <div class="stat-icon-wrapper blue">
+            <i class="ri-send-plane-fill"></i>
+          </div>
+          <div>
+            <h4>06</h4>
+            <p>Total Submitted</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon-wrapper green">
+            <i class="ri-calendar-check-line"></i>
+          </div>
+          <div>
+            <h4>02</h4>
+            <p>Interviews Scheduled</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon-wrapper purple">
+            <i class="ri-trophy-line"></i>
+          </div>
+          <div>
+            <h4>01</h4>
+            <p>Offer Received</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Application Filter Tabs -->
+      <section class="filter-strip">
+        <button class="chip active" data-filter="all">
+          All Applications (4)
+        </button>
+        <button class="chip" data-filter="in-review">In Review (1)</button>
+        <button class="chip" data-filter="interview">Interviewing (2)</button>
+        <button class="chip" data-filter="offered">Offered (1)</button>
+      </section>
+
+      <!-- Applications Feed List -->
+      <section class="applications-feed">
+        <div class="cards-grid">
+          <!-- Application Card 1: Offered -->
+          <article class="job-card application-card" data-status="offered">
+            <div class="card-top">
+              <div class="company-logo bg-purple">
+                <i class="ri-openai-fill"></i>
+              </div>
+              <div class="meta-info">
+                <div class="title-status-row">
+                  <h3>Senior Frontend Architect</h3>
+                  <span class="status-badge status-offer">
+                    <i class="ri-checkbox-circle-fill"></i> Offer Extended
+                  </span>
+                </div>
+                <p>
+                  Synthetix AI <span class="dot">•</span> San Francisco (Remote)
+                </p>
+              </div>
+            </div>
+
+            <!-- Application Tracking Steps -->
+            <div class="tracker-stepper">
+              <div class="step completed">
+                <span class="step-dot"></span>
+                <span class="step-label">Applied</span>
+              </div>
+              <div class="step-line completed"></div>
+              <div class="step completed">
+                <span class="step-dot"></span>
+                <span class="step-label">Screening</span>
+              </div>
+              <div class="step-line completed"></div>
+              <div class="step completed">
+                <span class="step-dot"></span>
+                <span class="step-label">Tech Round</span>
+              </div>
+              <div class="step-line completed"></div>
+              <div class="step current-success">
+                <span class="step-dot"></span>
+                <span class="step-label">Offer</span>
+              </div>
+            </div>
+
+            <div class="application-meta-details">
+              <div class="detail-item">
+                <span class="detail-label">Offered Package</span>
+                <strong class="detail-value text-accent">$195,000 / yr</strong>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Decision Deadline</span>
+                <strong class="detail-value">Aug 25, 2026</strong>
+              </div>
+            </div>
+
+            <div class="card-bottom">
+              <span class="timestamp"
+                ><i class="ri-time-line"></i> Applied 12 days ago</span
+              >
+              <button class="apply-cta offer-btn">
+                Review Offer <i class="ri-arrow-right-line"></i>
+              </button>
+            </div>
+          </article>
+
+          <!-- Application Card 2: Interviewing -->
+          <article class="job-card application-card" data-status="interview">
+            <div class="card-top">
+              <div class="company-logo bg-emerald">
+                <i class="ri-spotify-fill"></i>
+              </div>
+              <div class="meta-info">
+                <div class="title-status-row">
+                  <h3>Principal UX Strategist</h3>
+                  <span class="status-badge status-interview">
+                    <i class="ri-video-chat-fill"></i> Interview Round 2
+                  </span>
+                </div>
+                <p>Aura Flow <span class="dot">•</span> Bangalore / Hybrid</p>
+              </div>
+            </div>
+
+            <!-- Application Tracking Steps -->
+            <div class="tracker-stepper">
+              <div class="step completed">
+                <span class="step-dot"></span>
+                <span class="step-label">Applied</span>
+              </div>
+              <div class="step-line completed"></div>
+              <div class="step completed">
+                <span class="step-dot"></span>
+                <span class="step-label">Screening</span>
+              </div>
+              <div class="step-line completed"></div>
+              <div class="step current-active">
+                <span class="step-dot"></span>
+                <span class="step-label">System Design</span>
+              </div>
+              <div class="step-line"></div>
+              <div class="step">
+                <span class="step-dot"></span>
+                <span class="step-label">Offer</span>
+              </div>
+            </div>
+
+            <div class="application-meta-details">
+              <div class="detail-item">
+                <span class="detail-label">Upcoming Event</span>
+                <strong class="detail-value text-primary"
+                  >Technical System Design (Google Meet)</strong
+                >
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Date & Time</span>
+                <strong class="detail-value">Tomorrow, 4:30 PM IST</strong>
+              </div>
+            </div>
+
+            <div class="card-bottom">
+              <span class="timestamp"
+                ><i class="ri-calendar-line"></i> Scheduled Aug 18</span
+              >
+              <button class="apply-cta">
+                Join Meeting <i class="ri-external-link-line"></i>
+              </button>
+            </div>
+          </article>
+
+          <!-- Application Card 3: In Review -->
+          <article class="job-card application-card" data-status="in-review">
+            <div class="card-top">
+              <div class="company-logo gradient-purple">
+                <i class="ri-google-fill"></i>
+              </div>
+              <div class="meta-info">
+                <div class="title-status-row">
+                  <h3>Full Stack Engineer (L5)</h3>
+                  <span class="status-badge status-review">
+                    <i class="ri-hourglass-fill"></i> Under Review
+                  </span>
+                </div>
+                <p>Google Labs <span class="dot">•</span> Pune / Bengaluru</p>
+              </div>
+            </div>
+
+            <!-- Application Tracking Steps -->
+            <div class="tracker-stepper">
+              <div class="step completed">
+                <span class="step-dot"></span>
+                <span class="step-label">Applied</span>
+              </div>
+              <div class="step-line completed"></div>
+              <div class="step current-active">
+                <span class="step-dot"></span>
+                <span class="step-label">Resume Review</span>
+              </div>
+              <div class="step-line"></div>
+              <div class="step">
+                <span class="step-dot"></span>
+                <span class="step-label">Interview</span>
+              </div>
+              <div class="step-line"></div>
+              <div class="step">
+                <span class="step-dot"></span>
+                <span class="step-label">Result</span>
+              </div>
+            </div>
+
+            <div class="application-meta-details">
+              <div class="detail-item">
+                <span class="detail-label">Application ID</span>
+                <strong class="detail-value">NX-882910</strong>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Estimated Response</span>
+                <strong class="detail-value">Within 3-5 days</strong>
+              </div>
+            </div>
+
+            <div class="card-bottom">
+              <span class="timestamp"
+                ><i class="ri-time-line"></i> Applied 2 days ago</span
+              >
+              <button class="apply-cta withdraw-btn">
+                Withdraw Application <i class="ri-close-circle-line"></i>
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bottom Dock Navigation -->
+    <nav class="dock-navigation">
+      <div class="dock-wrapper">
+        <a href="index.html" class="dock-item" title="Home">
+          <i class="ri-home-5-fill"></i>
+        </a>
+        <a href="explore.html" class="dock-item" title="Explore">
+          <i class="ri-compass-3-line"></i>
+        </a>
+        <a href="profile.html" class="dock-item dock-center" title="Profile">
+          <i class="ri-user-6-line"></i>
+        </a>
+        <a href="applied.html" class="dock-item" title="Applied">
+          <i class="ri-briefcase-4-line"></i>
+        </a>
+        <a href="saved.html" class="dock-item" title="Saved">
+          <i class="ri-bookmark-3-line"></i>
+        </a>
+        <a href="notifications.html" class="dock-item" title="Notification">
+          <i class="ri-notification-3-fill"></i>
+        </a>
+      </div>
+    </nav>
+
+    <script src="javascript.js"></script>
+  </body>
+</html>

@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="mr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NexusJobs - Senior Frontend Architect at Synthetix AI</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Remix Icon CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-theme="dark">
+    <!-- Ambient Glows -->
+    <div class="ambient-glow glow-top-left"></div>
+    <div class="ambient-glow glow-top-right"></div>
+
+    <!-- Header -->
+    <header class="navbar-header">
+      <div class="brand">
+        <a href="index.html" class="brand-back-btn" title="Back to Openings">
+          <i class="ri-arrow-left-line"></i>
+        </a>
+        <div class="brand-icon"><i class="ri-briefcase-4-fill"></i></div>
+        <span>Job<strong>Details</strong></span>
+      </div>
+
+      <div class="header-actions">
+        <button id="theme-btn" class="icon-btn" aria-label="Toggle Theme">
+          <i class="ri-sun-line" id="theme-icon"></i>
+        </button>
+        <button class="icon-btn" id="btn-share-job" aria-label="Share Job">
+          <i class="ri-share-forward-line"></i>
+        </button>
+        <a href="auth.html" class="login-pill-btn">
+          <i class="ri-user-line"></i>
+          <span>Sign In</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="content-wrapper job-detail-wrapper">
+      <!-- Top Job Header Card -->
+      <section class="job-hero-card">
+        <div class="job-hero-top">
+          <div class="company-logo-lg bg-purple">
+            <i class="ri-openai-fill"></i>
+          </div>
+          <div class="job-hero-meta">
+            <div class="title-bookmark-row">
+              <h1 class="job-hero-title">Senior Frontend Architect</h1>
+              <button
+                class="bookmark-btn lg"
+                id="btn-job-bookmark"
+                aria-label="Bookmark Job"
+              >
+                <i class="ri-bookmark-line"></i>
+              </button>
+            </div>
+            <p class="company-subline">
+              <strong class="company-name">Synthetix AI</strong>
+              <span class="verified-badge"
+                ><i class="ri-verified-badge-fill"></i> Verified
+                Enterprise</span
+              >
+              <span class="dot">•</span>
+              <span>San Francisco, CA (100% Remote)</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Highlights Grid -->
+        <div class="job-key-stats">
+          <div class="key-stat-item">
+            <span class="stat-label">Annual Compensation</span>
+            <strong class="stat-val text-accent">$180,000 - $230,000</strong>
+          </div>
+          <div class="key-stat-item">
+            <span class="stat-label">Experience Required</span>
+            <strong class="stat-val">5+ Years</strong>
+          </div>
+          <div class="key-stat-item">
+            <span class="stat-label">Workplace Policy</span>
+            <strong class="stat-val">Worldwide Remote</strong>
+          </div>
+          <div class="key-stat-item">
+            <span class="stat-label">Application Deadline</span>
+            <strong class="stat-val text-emerald">Aug 30, 2026</strong>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Two-Column Layout -->
+      <div class="job-details-grid">
+        <!-- Left: Job Description & Requirements -->
+        <div class="job-main-column">
+          <!-- Section 1: Overview -->
+          <article class="job-spec-card">
+            <h2>About the Role</h2>
+            <p>
+              At <strong>Synthetix AI</strong>, we are building foundational
+              generative AI interfaces, spatial visualizers, and
+              ultra-low-latency web tooling. As a Senior Frontend Architect, you
+              will lead the core web platform architecture, design system
+              modernization, and WebGL-powered 3D asset workflows.
+            </p>
+          </article>
+
+          <!-- Section 2: Core Responsibilities -->
+          <article class="job-spec-card">
+            <h2>Key Responsibilities</h2>
+            <ul class="spec-checklist">
+              <li>
+                <i class="ri-check-line"></i>
+                <span
+                  >Architect high-performance micro-frontends using Next.js 15
+                  and TypeScript.</span
+                >
+              </li>
+              <li>
+                <i class="ri-check-line"></i>
+                <span
+                  >Build hardware-accelerated canvas components and real-time
+                  WebGL data graphs.</span
+                >
+              </li>
+              <li>
+                <i class="ri-check-line"></i>
+                <span
+                  >Collaborate with AI model deployment engineers to deliver
+                  streaming LLM inference UI.</span
+                >
+              </li>
+              <li>
+                <i class="ri-check-line"></i>
+                <span
+                  >Mentor senior engineers, enforce web performance standards,
+                  and maintain &gt;95 Lighthouse scores.</span
+                >
+              </li>
+            </ul>
+          </article>
+
+          <!-- Section 3: Qualifications & Skills -->
+          <article class="job-spec-card">
+            <h2>Required Tech Stack & Expertise</h2>
+            <div class="tags-row skills-tag-group" style="margin-top: 0.75rem">
+              <span class="tag tag-accent">React.js</span>
+              <span class="tag tag-accent">Next.js 14/15</span>
+              <span class="tag tag-accent">TypeScript</span>
+              <span class="tag">WebGL / Three.js</span>
+              <span class="tag">Tailwind CSS</span>
+              <span class="tag">REST & GraphQL</span>
+              <span class="tag">WebSockets</span>
+              <span class="tag">Docker</span>
+              <span class="tag">CI/CD Pipelines</span>
+            </div>
+          </article>
+
+          <!-- Section 4: Benefits & Perks -->
+          <article class="job-spec-card">
+            <h2>Perks & Benefits</h2>
+            <div class="perks-grid">
+              <div class="perk-item">
+                <i class="ri-home-wifi-line"></i>
+                <div>
+                  <strong>$2,500 Home Office Budget</strong>
+                  <p>Ergonomic desk, monitor & gear reimbursement.</p>
+                </div>
+              </div>
+              <div class="perk-item">
+                <i class="ri-heart-pulse-line"></i>
+                <div>
+                  <strong>100% Health & Wellness</strong>
+                  <p>
+                    Comprehensive medical, dental and mental health support.
+                  </p>
+                </div>
+              </div>
+              <div class="perk-item">
+                <i class="ri-flight-takeoff-line"></i>
+                <div>
+                  <strong>Unlimited Paid Time Off</strong>
+                  <p>Flexible PTO policy with mandatory minimum breaks.</p>
+                </div>
+              </div>
+              <div class="perk-item">
+                <i class="ri-coin-line"></i>
+                <div>
+                  <strong>Stock Options (Equity)</strong>
+                  <p>Early enterprise tier equity participation.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Right: Company Sidebar Info -->
+        <aside class="job-sidebar-column">
+          <div class="company-sidebar-card">
+            <h3>Company Overview</h3>
+            <div class="company-quick-info">
+              <div class="quick-info-row">
+                <i class="ri-building-line"></i>
+                <div>
+                  <span>Industry</span>
+                  <strong>Artificial Intelligence & DeepTech</strong>
+                </div>
+              </div>
+              <div class="quick-info-row">
+                <i class="ri-team-line"></i>
+                <div>
+                  <span>Company Size</span>
+                  <strong>250 - 500 Employees</strong>
+                </div>
+              </div>
+              <div class="quick-info-row">
+                <i class="ri-map-pin-2-line"></i>
+                <div>
+                  <span>Headquarters</span>
+                  <strong>San Francisco, California</strong>
+                </div>
+              </div>
+              <div class="quick-info-row">
+                <i class="ri-global-line"></i>
+                <div>
+                  <span>Website</span>
+                  <a href="#" class="sidebar-link"
+                    >synthetix.ai <i class="ri-external-link-line"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="sidebar-cta-box">
+              <button class="btn-secondary-block" id="btn-open-company-profile">
+                View Company Profile
+              </button>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <!-- Fixed Bottom Sticky Apply Action Bar -->
+    <div class="sticky-apply-bar">
+      <div class="sticky-bar-wrapper">
+        <div class="sticky-salary-info">
+          <span class="label">Total Compensation</span>
+          <strong class="val">$180k - $230k <small>/ yr</small></strong>
+        </div>
+        <div class="sticky-actions">
+          <button class="bookmark-pill-btn" id="btn-sticky-bookmark">
+            <i class="ri-bookmark-line"></i>
+            <span>Save</span>
+          </button>
+          <button
+            class="btn-primary-gradient apply-now-btn"
+            id="btn-trigger-apply-modal"
+          >
+            Apply Now <i class="ri-arrow-right-line"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1-Click Application Modal -->
+    <div class="modal-overlay" id="modal-quick-apply">
+      <div class="glass-modal">
+        <div class="modal-header">
+          <h3>Apply to Synthetix AI</h3>
+          <button class="modal-close-btn" data-close="modal-quick-apply">
+            <i class="ri-close-line"></i>
+          </button>
+        </div>
+        <form id="form-quick-apply" class="modal-form">
+          <div class="form-group">
+            <label>Selected Profile</label>
+            <input
+              type="text"
+              value="Harshal Mahajan (Verified Pro)"
+              readonly
+            />
+          </div>
+          <div class="form-group">
+            <label>Attached Resume</label>
+            <div class="resume-card" style="padding: 0.75rem 1rem">
+              <div
+                class="resume-icon-box"
+                style="width: 36px; height: 36px; font-size: 1.2rem"
+              >
+                <i class="ri-file-pdf-2-line"></i>
+              </div>
+              <div class="resume-details">
+                <h4 style="font-size: 0.88rem">
+                  Harshal_FullStack_Resume_2026.pdf
+                </h4>
+                <p style="font-size: 0.72rem">PDF • 1.2 MB</p>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Cover Note / Message to Recruiter (Optional)</label>
+            <textarea
+              rows="3"
+              placeholder="Briefly share why you are a great fit for this role..."
+            ></textarea>
+          </div>
+          <div class="modal-actions">
+            <button
+              type="button"
+              class="btn-cancel"
+              data-close="modal-quick-apply"
+            >
+              Cancel
+            </button>
+            <button type="submit" class="btn-primary-gradient">
+              Submit Application <i class="ri-send-plane-fill"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Bottom Dock Navigation -->
+   <nav class="dock-navigation">
+      <div class="dock-wrapper">
+        <a href="index.html" class="dock-item" title="Home">
+          <i class="ri-home-5-fill"></i>
+        </a>
+        <a href="explore.html" class="dock-item" title="Explore">
+          <i class="ri-compass-3-line"></i>
+        </a>
+        <a href="profile.html" class="dock-item dock-center" title="Profile">
+          <i class="ri-user-6-line"></i>
+        </a>
+        <a href="applied.html" class="dock-item" title="Applied">
+          <i class="ri-briefcase-4-line"></i>
+        </a>
+        <a href="saved.html" class="dock-item" title="Saved">
+          <i class="ri-bookmark-3-line"></i>
+        </a>
+        <a href="notifications.html" class="dock-item" title="Notification">
+          <i class="ri-notification-3-fill"></i>
+        </a>
+      </div>
+    </nav>
+
+    <script src="javascript.js"></script>
+  </body>
+</html>
