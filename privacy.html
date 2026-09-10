@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="mr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NexusJobs - Privacy Policy & Terms</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Remix Icon CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-theme="dark">
+    <!-- Ambient Glow Effects -->
+    <div class="ambient-glow glow-top-left"></div>
+    <div class="ambient-glow glow-top-right"></div>
+
+    <!-- Header -->
+    <header class="navbar-header">
+      <a
+        href="index.html"
+        class="brand"
+        style="text-decoration: none; color: inherit"
+      >
+        <div class="brand-icon"><i class="ri-flashlight-fill"></i></div>
+        <span>Nexus<strong>Jobs</strong></span>
+      </a>
+
+      <div class="header-actions">
+        <button id="theme-btn" class="icon-btn" aria-label="Toggle Theme">
+          <i class="ri-sun-line" id="theme-icon"></i>
+        </button>
+        <a href="auth.html" class="login-pill-btn">
+          <i class="ri-user-line"></i>
+          <span>Sign In</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="content-wrapper">
+      <!-- Legal Hero Header -->
+      <section class="explore-hero">
+        <div class="badge-pill">
+          <span class="pulse-dot"></span> Effective as of August 2026
+        </div>
+        <h1 class="explore-heading">
+          Trust, <span class="gradient-text">Privacy & Terms</span>
+        </h1>
+        <p class="hero-subtitle">
+          Transparent data protection standards, end-to-end recruiter privacy
+          controls, and platform usage guidelines.
+        </p>
+      </section>
+
+      <!-- Legal Tab Switcher -->
+      <div class="legal-tabs-wrapper">
+        <button
+          class="chip active"
+          id="btn-tab-privacy"
+          data-legal="legal-privacy-section"
+        >
+          <i class="ri-shield-user-line"></i> Privacy Policy
+        </button>
+        <button
+          class="chip"
+          id="btn-tab-terms"
+          data-legal="legal-terms-section"
+        >
+          <i class="ri-file-shield-line"></i> Terms of Service
+        </button>
+        <button
+          class="chip"
+          id="btn-tab-security"
+          data-legal="legal-security-section"
+        >
+          <i class="ri-lock-password-line"></i> Data Security
+        </button>
+      </div>
+
+      <!-- Main Legal Content Body -->
+      <div class="legal-content-container">
+        <!-- 1. PRIVACY POLICY SECTION -->
+        <section class="legal-section active" id="legal-privacy-section">
+          <article class="job-spec-card">
+            <h2>1. Information We Collect</h2>
+            <p>
+              NexusJobs collects information you provide directly during
+              registration, profile updates, and direct role submissions. This
+              includes:
+            </p>
+            <ul class="spec-checklist" style="margin-top: 1rem">
+              <li>
+                <i class="ri-check-line"></i>
+                <span
+                  ><strong>Profile & Career Details:</strong> Full name, email
+                  address, portfolio URLs, GitHub handles, employment history,
+                  and uploaded PDF resumes.</span
+                >
+              </li>
+              <li>
+                <i class="ri-check-line"></i>
+                <span
+                  ><strong>Application Tracking:</strong> Submission logs,
+                  interview statuses, direct communication timestamps, and
+                  salary preferences.</span
+                >
+              </li>
+              <li>
+                <i class="ri-check-line"></i>
+                <span
+                  ><strong>Device & Analytics:</strong> IP address, browser
+                  type, device identifiers, and platform session activity.</span
+                >
+              </li>
+            </ul>
+          </article>
+
+          <article class="job-spec-card">
+            <h2>2. How We Use Candidate Data</h2>
+            <p>
+              We process candidate information strictly to deliver seamless
+              recruitment matches, verified hiring pipelines, and direct
+              application routing. We will never sell your resume or personal
+              data to third-party advertising brokers.
+            </p>
+          </article>
+
+          <article class="job-spec-card">
+            <h2>3. Recruiter Visibility & Profile Sharing</h2>
+            <p>
+              When you submit a 1-Click Application or enable public visibility
+              in your settings, only verified enterprise recruiters can view
+              your attached credentials. You can revoke access or toggle to
+              private candidate mode at any time directly from the settings
+              drawer.
+            </p>
+          </article>
+        </section>
+
+        <!-- 2. TERMS OF SERVICE SECTION -->
+        <section class="legal-section" id="legal-terms-section">
+          <article class="job-spec-card">
+            <h2>1. Candidate Eligibility & Account Integrity</h2>
+            <p>
+              By accessing NexusJobs, you confirm that you are at least 18 years
+              of age and that all experience credentials, skills, work
+              histories, and uploaded portfolios accurately represent your
+              individual work.
+            </p>
+          </article>
+
+          <article class="job-spec-card">
+            <h2>2. Authentic Compensation Transparency</h2>
+            <p>
+              All published job listings mandate verified salary ranges. Any
+              employer found manipulating salary bands or engaging in
+              bait-and-switch recruitment tactics will be permanently suspended
+              from the Nexus platform.
+            </p>
+          </article>
+
+          <article class="job-spec-card">
+            <h2>3. Intellectual Property Rights</h2>
+            <p>
+              You retain complete ownership over all resumes, code snippets,
+              project showcases, and design portfolios uploaded to your Nexus
+              profile.
+            </p>
+          </article>
+        </section>
+
+        <!-- 3. DATA SECURITY SECTION -->
+        <section class="legal-section" id="legal-security-section">
+          <article class="job-spec-card">
+            <h2>1. Encryption & Data Safeguards</h2>
+            <p>
+              All candidate data and resume documents are protected using TLS
+              1.3 encryption in transit and AES-256 encryption at rest within
+              secure cloud environments.
+            </p>
+          </article>
+
+          <article class="job-spec-card">
+            <h2>2. Right to Data Deletion</h2>
+            <p>
+              You maintain full GDPR & DPDP compliance rights to download an
+              archive of your profile activity or request permanent data
+              deletion from Nexus servers at any time via the Help Center.
+            </p>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <!-- Bottom Dock Navigation -->
+    <nav class="dock-navigation">
+      <div class="dock-wrapper">
+        <a href="index.html" class="dock-item" title="Home">
+          <i class="ri-home-5-fill"></i>
+        </a>
+        <a href="explore.html" class="dock-item" title="Explore">
+          <i class="ri-compass-3-line"></i>
+        </a>
+        <a href="companies.html" class="dock-item" title="Companys">
+          <i class="ri-building-4-line"></i>
+        </a>
+        <a href="profile.html" class="dock-item dock-center" title="Profile">
+          <i class="ri-user-6-line"></i>
+        </a>
+        <a href="applied.html" class="dock-item" title="Applied">
+          <i class="ri-briefcase-4-line"></i>
+        </a>
+        <a href="saved.html" class="dock-item" title="Saved">
+          <i class="ri-bookmark-3-line"></i>
+        </a>
+        <a href="notifications.html" class="dock-item" title="Notification">
+          <i class="ri-notification-3-fill"></i>
+        </a>
+      </div>
+    </nav>
+
+    <script src="javascript.js"></script>
+  </body>
+</html>

@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="mr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NexusJobs - Help & Support Center</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Remix Icon CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-theme="dark">
+    <!-- Ambient Glow Effects -->
+    <div class="ambient-glow glow-top-left"></div>
+    <div class="ambient-glow glow-top-right"></div>
+
+    <!-- Header -->
+    <header class="navbar-header">
+      <a
+        href="index.html"
+        class="brand"
+        style="text-decoration: none; color: inherit"
+      >
+        <div class="brand-icon"><i class="ri-flashlight-fill"></i></div>
+        <span>Nexus<strong>Jobs</strong></span>
+      </a>
+
+      <div class="header-actions">
+        <button id="theme-btn" class="icon-btn" aria-label="Toggle Theme">
+          <i class="ri-sun-line" id="theme-icon"></i>
+        </button>
+        <a href="auth.html" class="login-pill-btn">
+          <i class="ri-user-line"></i>
+          <span>Sign In</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="content-wrapper">
+      <!-- Help Center Hero -->
+      <section class="explore-hero">
+        <div class="badge-pill">
+          <span class="pulse-dot"></span> 24/7 Dedicated Support
+        </div>
+        <h1 class="explore-heading">
+          How Can We <span class="gradient-text">Help You?</span>
+        </h1>
+        <p class="hero-subtitle">
+          Search our knowledge base, explore frequently asked questions, or
+          reach out to our candidate success team.
+        </p>
+
+        <!-- Help Live Search Bar -->
+        <div class="search-island" style="max-width: 600px">
+          <div class="search-field-wrapper">
+            <div class="search-field">
+              <i class="ri-search-2-line"></i>
+              <input
+                type="text"
+                id="faq-search-input"
+                placeholder="Search queries (e.g. resume, interview, salary, verify)..."
+                autocomplete="off"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quick Support Channels Grid -->
+      <section class="explore-section">
+        <div class="support-channels-grid">
+          <div class="channel-card">
+            <div class="channel-icon blue">
+              <i class="ri-chat-smile-2-line"></i>
+            </div>
+            <h3>Instant Live Chat</h3>
+            <p>Connect directly with our support specialists in real-time.</p>
+            <span class="channel-badge online">Average wait: 2 mins</span>
+            <button class="channel-cta-btn" id="btn-start-livechat">
+              Start Conversation <i class="ri-arrow-right-line"></i>
+            </button>
+          </div>
+
+          <div class="channel-card">
+            <div class="channel-icon green">
+              <i class="ri-mail-send-line"></i>
+            </div>
+            <h3>Email Support</h3>
+            <p>
+              Send in-depth queries, logs, or verification verification
+              requests.
+            </p>
+            <span class="channel-badge">support@nexusjobs.io</span>
+            <a href="mailto:support@nexusjobs.io" class="channel-cta-btn">
+              Send Email <i class="ri-external-link-line"></i>
+            </a>
+          </div>
+
+          <div class="channel-card">
+            <div class="channel-icon purple">
+              <i class="ri-discord-line"></i>
+            </div>
+            <h3>Developer Community</h3>
+            <p>
+              Join 15k+ engineers discussing salary, referrals, and tech stacks.
+            </p>
+            <span class="channel-badge">Discord Network</span>
+            <a href="#" class="channel-cta-btn">
+              Join Server <i class="ri-arrow-right-up-line"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive FAQ Accordion -->
+      <section class="explore-section">
+        <div class="feed-header">
+          <h2>Frequently Asked Questions</h2>
+          <span class="view-all" id="faq-results-count">Showing 5 topics</span>
+        </div>
+
+        <div class="faq-accordion" id="faq-accordion-container">
+          <!-- FAQ Item 1 -->
+          <div
+            class="faq-item"
+            data-keywords="apply application resume direct jobs tracking"
+          >
+            <button class="faq-question">
+              <span
+                >How does direct 1-click application work on NexusJobs?</span
+              >
+              <i class="ri-arrow-down-s-line faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Once your profile is set up with an uploaded resume, you can
+                apply directly to verified high-growth roles without filling
+                repetitive forms. Your profile credentials and verified projects
+                are instantly shared with the company's hiring pipeline.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div
+            class="faq-item"
+            data-keywords="interview status tracking google meet calendar offers"
+          >
+            <button class="faq-question">
+              <span
+                >Where can I track upcoming interview schedules and
+                offers?</span
+              >
+              <i class="ri-arrow-down-s-line faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Head to your <strong>Applications</strong> tab. Each role
+                features a multi-stage visual stepper (Applied → Screening →
+                Tech Rounds → Offer). Direct Google Meet links and salary offer
+                review docs appear automatically in your feed.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div
+            class="faq-item"
+            data-keywords="verification badge pro profile full stack developer"
+          >
+            <button class="faq-question">
+              <span>How do I get the "Verified Pro" badge on my profile?</span>
+              <i class="ri-arrow-down-s-line faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                The Verified Pro badge is awarded automatically when your
+                profile completeness reaches above 80%, including verified work
+                history, active skills with proficiency tags, and a valid work
+                email.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div
+            class="faq-item"
+            data-keywords="salary compensation benchmark lpa confidential privacy"
+          >
+            <button class="faq-question">
+              <span>Are salary ranges guaranteed and authentic?</span>
+              <i class="ri-arrow-down-s-line faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Yes. NexusJobs mandates that every hiring partner provides
+                explicit and authentic CTC/salary benchmarks before any opening
+                is published. There are no hidden tiers or surprise
+                down-leveling.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <div
+            class="faq-item"
+            data-keywords="resume upload pdf formats size limits"
+          >
+            <button class="faq-question">
+              <span
+                >What file formats and sizes are supported for resumes?</span
+              >
+              <i class="ri-arrow-down-s-line faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                We support PDF and DOCX files up to 5MB. You can replace or
+                preview your stored resume anytime directly from the Profile tab
+                or the Settings drawer.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Direct Ticket Submission Card -->
+      <section class="explore-section">
+        <div class="support-ticket-card">
+          <div class="ticket-header">
+            <div class="ticket-badge">
+              <i class="ri-customer-service-2-line"></i> Contact Form
+            </div>
+            <h2>Can't find what you're looking for?</h2>
+            <p>
+              Submit a priority support ticket and our engineering assistance
+              team will respond within 4 business hours.
+            </p>
+          </div>
+
+          <form id="form-support-ticket" class="ticket-form">
+            <div class="ticket-grid">
+              <div class="form-group">
+                <label for="ticket-name">Your Name</label>
+                <input
+                  type="text"
+                  id="ticket-name"
+                  value="Harshal Mahajan"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="ticket-email">Registered Email</label>
+                <input
+                  type="email"
+                  id="ticket-email"
+                  placeholder="name@company.com"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="ticket-category">Query Category</label>
+              <select
+                id="ticket-category"
+                class="auth-select"
+                style="background: var(--surface)"
+              >
+                <option value="applications">
+                  Application & Recruiter Status
+                </option>
+                <option value="account">Account & Profile Verification</option>
+                <option value="technical">Technical Bug or Issue</option>
+                <option value="billing">Enterprise & Recruiter Inquiry</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="ticket-message"
+                >Describe your issue or feedback</label
+              >
+              <textarea
+                id="ticket-message"
+                rows="4"
+                placeholder="Provide specific details, application IDs, or error descriptions..."
+                required
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="btn-primary-gradient auth-submit-btn"
+              style="width: auto; align-self: flex-start; padding: 0.75rem 2rem"
+            >
+              Submit Support Ticket <i class="ri-send-plane-fill"></i>
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bottom Dock Navigation -->
+    <nav class="dock-navigation">
+      <div class="dock-wrapper">
+        <a href="index.html" class="dock-item" title="Home">
+          <i class="ri-home-5-fill"></i>
+        </a>
+        <a href="explore.html" class="dock-item" title="Explore">
+          <i class="ri-compass-3-line"></i>
+        </a>
+        <a href="companies.html" class="dock-item" title="Companys">
+          <i class="ri-building-4-line"></i>
+        </a>
+        <a href="profile.html" class="dock-item dock-center" title="Profile">
+          <i class="ri-user-6-line"></i>
+        </a>
+        <a href="applied.html" class="dock-item" title="Applied">
+          <i class="ri-briefcase-4-line"></i>
+        </a>
+        <a href="saved.html" class="dock-item" title="Saved">
+          <i class="ri-bookmark-3-line"></i>
+        </a>
+        <a href="notifications.html" class="dock-item" title="Notification">
+          <i class="ri-notification-3-fill"></i>
+        </a>
+      </div>
+    </nav>
+
+    <script src="javascript.js"></script>
+  </body>
+</html>

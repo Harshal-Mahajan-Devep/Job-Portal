@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="mr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NexusJobs - Top Tech Companies & Hubs</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Remix Icon CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-theme="dark">
+    <!-- Ambient Glow Effects -->
+    <div class="ambient-glow glow-top-left"></div>
+    <div class="ambient-glow glow-top-right"></div>
+
+    <!-- Header -->
+    <header class="navbar-header">
+      <a
+        href="index.html"
+        class="brand"
+        style="text-decoration: none; color: inherit"
+      >
+        <div class="brand-icon"><i class="ri-flashlight-fill"></i></div>
+        <span>Nexus<strong>Jobs</strong></span>
+      </a>
+
+      <div class="header-actions">
+        <button id="theme-btn" class="icon-btn" aria-label="Toggle Theme">
+          <i class="ri-sun-line" id="theme-icon"></i>
+        </button>
+        <a href="auth.html" class="login-pill-btn">
+          <i class="ri-user-line"></i>
+          <span>Sign In</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="content-wrapper">
+      <!-- Companies Hero -->
+      <section class="explore-hero">
+        <div class="badge-pill">
+          <span class="pulse-dot"></span> 850+ Verified Tech Workplaces
+        </div>
+        <h1 class="explore-heading">
+          Discover Elite <span class="gradient-text">Companies & Hubs</span>
+        </h1>
+        <p class="hero-subtitle">
+          Explore transparent engineering cultures, authentic salary benchmarks,
+          and direct hiring teams.
+        </p>
+
+        <!-- Company Search Island -->
+        <div class="search-island" style="max-width: 620px">
+          <div class="search-field-wrapper">
+            <div class="search-field">
+              <i class="ri-search-2-line"></i>
+              <input
+                type="text"
+                id="company-search-input"
+                placeholder="Search company name, industry, or tech stack..."
+                autocomplete="off"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Category Filter Strip -->
+      <section class="filter-strip">
+        <button class="chip active" data-company-filter="all">
+          All Companies (8)
+        </button>
+        <button class="chip" data-company-filter="ai">AI & DeepTech</button>
+        <button class="chip" data-company-filter="cloud">
+          Cloud & Infrastructure
+        </button>
+        <button class="chip" data-company-filter="fintech">
+          Fintech & Payments
+        </button>
+        <button class="chip" data-company-filter="remote">
+          100% Remote First
+        </button>
+      </section>
+
+      <!-- Companies Grid -->
+      <section class="explore-section">
+        <div class="company-grid-enhanced" id="companies-container">
+          <!-- Company 1: Synthetix AI -->
+          <article class="company-showcase-card" data-category="ai remote">
+            <div class="company-card-banner gradient-purple-banner">
+              <span class="hiring-badge"
+                ><span class="pulse-dot"></span> 18 Roles Live</span
+              >
+            </div>
+            <div class="company-card-content">
+              <div class="company-avatar-wrapper">
+                <div class="company-avatar bg-purple">
+                  <i class="ri-openai-fill"></i>
+                </div>
+                <div class="company-header-meta">
+                  <div class="company-title-wrap">
+                    <h3>Synthetix AI</h3>
+                    <span class="verified-badge"
+                      ><i class="ri-verified-badge-fill"></i> Verified</span
+                    >
+                  </div>
+                  <span class="rating"
+                    ><i class="ri-star-fill"></i> 4.9 (1.2k reviews)</span
+                  >
+                </div>
+              </div>
+
+              <p class="company-desc">
+                Building foundational spatial interfaces, real-time WebGL
+                tooling, and low-latency generative AI model accelerators.
+              </p>
+
+              <div class="tags-row" style="margin-bottom: 1rem">
+                <span class="tag tag-accent">Next.js 15</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">WebGL</span>
+                <span class="tag">Python</span>
+              </div>
+
+              <div class="company-stats-pill-row">
+                <div class="stat-pill">
+                  <i class="ri-money-dollar-circle-line"></i>
+                  <span>$180k - $240k</span>
+                </div>
+                <div class="stat-pill">
+                  <i class="ri-map-pin-2-line"></i>
+                  <span>San Francisco (Remote)</span>
+                </div>
+                <div class="stat-pill">
+                  <i class="ri-team-line"></i>
+                  <span>250-500 Team</span>
+                </div>
+              </div>
+
+              <div class="company-card-footer">
+                <span class="benefits-preview"
+                  ><i class="ri-sparkling-fill"></i> $2,500 Gear Budget •
+                  Equity</span
+                >
+                <a href="job-details.html" class="company-view-jobs-btn">
+                  View Openings <i class="ri-arrow-right-line"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Company 2: Google Labs -->
+          <article class="company-showcase-card" data-category="ai cloud">
+            <div class="company-card-banner gradient-purple-banner">
+              <span class="hiring-badge"
+                ><span class="pulse-dot"></span> 14 Roles Live</span
+              >
+            </div>
+            <div class="company-card-content">
+              <div class="company-avatar-wrapper">
+                <div class="company-avatar gradient-purple">
+                  <i class="ri-google-fill"></i>
+                </div>
+                <div class="company-header-meta">
+                  <div class="company-title-wrap">
+                    <h3>Google Labs</h3>
+                    <span class="verified-badge"
+                      ><i class="ri-verified-badge-fill"></i> Verified</span
+                    >
+                  </div>
+                  <span class="rating"
+                    ><i class="ri-star-fill"></i> 4.8 (2.4k reviews)</span
+                  >
+                </div>
+              </div>
+
+              <p class="company-desc">
+                Next-generation quantum cloud computing, neural search engines,
+                and enterprise AI orchestration frameworks.
+              </p>
+
+              <div class="tags-row" style="margin-bottom: 1rem">
+                <span class="tag tag-accent">Go</span>
+                <span class="tag">Kubernetes</span>
+                <span class="tag">TensorFlow</span>
+                <span class="tag">C++</span>
+              </div>
+
+              <div class="company-stats-pill-row">
+                <div class="stat-pill">
+                  <i class="ri-money-dollar-circle-line"></i>
+                  <span>₹35 - 60 LPA</span>
+                </div>
+                <div class="stat-pill">
+                  <i class="ri-map-pin-2-line"></i>
+                  <span>Pune / Bengaluru</span>
+                </div>
+                <div class="stat-pill">
+                  <i class="ri-team-line"></i>
+                  <span>5,000+ Team</span>
+                </div>
+              </div>
+
+              <div class="company-card-footer">
+                <span class="benefits-preview"
+                  ><i class="ri-sparkling-fill"></i> Full Health • Stock
+                  Options</span
+                >
+                <a href="job-details.html" class="company-view-jobs-btn">
+                  View Openings <i class="ri-arrow-right-line"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Company 3: Meta Platform -->
+          <article class="company-showcase-card" data-category="ai remote">
+            <div class="company-card-banner gradient-emerald-banner">
+              <span class="hiring-badge"
+                ><span class="pulse-dot"></span> 9 Roles Live</span
+              >
+            </div>
+            <div class="company-card-content">
+              <div class="company-avatar-wrapper">
+                <div class="company-avatar gradient-emerald">
+                  <i class="ri-meta-fill"></i>
+                </div>
+                <div class="company-header-meta">
+                  <div class="company-title-wrap">
+                    <h3>Meta Platform</h3>
+                    <span class="verified-badge"
+                      ><i class="ri-verified-badge-fill"></i> Verified</span
+                    >
+                  </div>
+                  <span class="rating"
+                    ><i class="ri-star-fill"></i> 4.7 (1.8k reviews)</span
+                  >
+                </div>
+              </div>
+
+              <p class="company-desc">
+                Connecting billions globally with open-source LLaMA foundation
+                models, distributed graph compute, and spatial metaverse
+                products.
+              </p>
+
+              <div class="tags-row" style="margin-bottom: 1rem">
+                <span class="tag tag-accent">React Native</span>
+                <span class="tag">PyTorch</span>
+                <span class="tag">GraphQL</span>
+                <span class="tag">Rust</span>
+              </div>
+
+              <div class="company-stats-pill-row">
+                <div class="stat-pill">
+                  <i class="ri-money-dollar-circle-line"></i>
+                  <span>₹38 - 65 LPA</span>
+                </div>
+                <div class="stat-pill">
+                  <i class="ri-map-pin-2-line"></i>
+                  <span>Hyderabad / Remote</span>
+                </div>
+                <div class="stat-pill">
+                  <i class="ri-team-line"></i>
+                  <span>10,000+ Team</span>
+                </div>
+              </div>
+
+              <div class="company-card-footer">
+                <span class="benefits-preview"
+                  ><i class="ri-sparkling-fill"></i> Unlimited PTO • Health
+                  Cover</span
+                >
+                <a href="job-details.html" class="company-view-jobs-btn">
+                  View Openings <i class="ri-arrow-right-line"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Company 4: Aura Flow (Spotify Ecosystem) -->
+          <article class="company-showcase-card" data-category="cloud remote">
+            <div class="company-card-banner gradient-emerald-banner">
+              <span class="hiring-badge"
+                ><span class="pulse-dot"></span> 6 Roles Live</span
+              >
+            </div>
+            <div class="company-card-content">
+              <div class="company-avatar-wrapper">
+                <div class="company-avatar bg-emerald">
+                  <i class="ri-spotify-fill"></i>
+                </div>
+                <div class="company-header-meta">
+                  <div class="company-title-wrap">
+                    <h3>Aura Flow</h3>
+                    <span class="verified-badge"
+                      ><i class="ri-verified-badge-fill"></i> Verified</span
+                    >
+                  </div>
+                  <span class="rating"
+                    ><i class="ri-star-fill"></i> 4.9 (850 reviews)</span
+                  >
+                </div>
+              </div>
+
+              <p class="company-desc">
+                High-throughput real-time audio streaming algorithms,
+                micro-frontend audio players, and spatial acoustic intelligence.
+              </p>
+
+              <div class="tags-row" style="margin-bottom: 1rem">
+                <span class="tag tag-accent">React</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">WebAudio API</span>
+                <span class="tag">AWS</span>
+              </div>
+
+              <div class="company-stats-pill-row">
+                <div class="stat-pill">
+                  <i class="ri-money-dollar-circle-line"></i>
+                  <span>₹28 - 48 LPA</span>
+                </div>
+                <div class="stat-pill">
+                  <i class="ri-map-pin-2-line"></i>
+                  <span>Bangalore / Hybrid</span>
+                </div>
+                <div class="stat-pill">
+                  <i class="ri-team-line"></i>
+                  <span>500-1,000 Team</span>
+                </div>
+              </div>
+
+              <div class="company-card-footer">
+                <span class="benefits-preview"
+                  ><i class="ri-sparkling-fill"></i> Flexible Hours • Wellness
+                  Bonus</span
+                >
+                <a href="job-details.html" class="company-view-jobs-btn">
+                  View Openings <i class="ri-arrow-right-line"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bottom Dock Navigation -->
+    <nav class="dock-navigation">
+      <div class="dock-wrapper">
+        <a href="index.html" class="dock-item" title="Home">
+          <i class="ri-home-5-fill"></i>
+        </a>
+        <a href="explore.html" class="dock-item" title="Explore">
+          <i class="ri-compass-3-line"></i>
+        </a>
+        <a href="companies.html" class="dock-item" title="Companys">
+          <i class="ri-building-4-line"></i>
+        </a>
+        <a href="profile.html" class="dock-item dock-center" title="Profile">
+          <i class="ri-user-6-line"></i>
+        </a>
+        <a href="applied.html" class="dock-item" title="Applied">
+          <i class="ri-briefcase-4-line"></i>
+        </a>
+        <a href="saved.html" class="dock-item" title="Saved">
+          <i class="ri-bookmark-3-line"></i>
+        </a>
+        <a href="notifications.html" class="dock-item" title="Notification">
+          <i class="ri-notification-3-fill"></i>
+        </a>
+      </div>
+    </nav>
+
+    <script src="javascript.js"></script>
+  </body>
+</html>

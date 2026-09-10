@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const feedContent = document.getElementById("job-feed-content");
 
   if (feedSkeleton && feedContent) {
-    // 800ms नंतर Loader hide होऊन content smooth fade-in होईल
     setTimeout(() => {
       feedSkeleton.style.transition = "opacity 0.3s ease";
       feedSkeleton.style.opacity = "0";
@@ -197,7 +196,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const btnIcon = btnLoadMore.querySelector("i");
       const spinner = btnLoadMore.querySelector(".loader-spinner");
 
-      // Loading State सुरू
       btnLoadMore.disabled = true;
       if (btnText) btnText.innerText = "Fetching Openings...";
       if (btnIcon) btnIcon.style.display = "none";
@@ -206,10 +204,8 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
         loadCount++;
 
-        // New Posts Data
         const newCardsHTML = `
-        <!-- Job Card Added via Load More -->
-        <article class="job-card" style="opacity: 0; transform: translateY(15px); transition: all 0.4s ease;">
+        <article class="job-card" style="opacity: 0; transform: translateY(15px); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);">
           <div class="card-top">
             <div class="company-logo bg-purple">
               <i class="ri-amazon-fill"></i>
@@ -236,13 +232,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
           <div class="card-bottom">
             <span class="timestamp"><i class="ri-time-line"></i> Just now</span>
-            <button class="apply-cta">
+            <a href="job-details.html" class="apply-cta">
               Apply Direct <i class="ri-arrow-right-up-line"></i>
-            </button>
+            </a>
           </div>
         </article>
 
-        <article class="job-card" style="opacity: 0; transform: translateY(15px); transition: all 0.4s ease;">
+        <article class="job-card" style="opacity: 0; transform: translateY(15px); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);">
           <div class="card-top">
             <div class="company-logo bg-emerald">
               <i class="ri-apple-fill"></i>
@@ -269,16 +265,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
           <div class="card-bottom">
             <span class="timestamp"><i class="ri-time-line"></i> Just now</span>
-            <button class="apply-cta">
+            <a href="job-details.html" class="apply-cta">
               Apply Direct <i class="ri-arrow-right-up-line"></i>
-            </button>
+            </a>
           </div>
         </article>
       `;
 
         jobFeedContent.insertAdjacentHTML("beforeend", newCardsHTML);
 
-        // Smooth Fade-in effect for newly appended cards
         const allCards = jobFeedContent.querySelectorAll(".job-card");
         const latestCards = [
           allCards[allCards.length - 2],
@@ -294,7 +289,6 @@ document.addEventListener("DOMContentLoaded", () => {
           });
         });
 
-        // Button State Reset
         btnLoadMore.disabled = false;
         if (btnIcon) btnIcon.style.display = "inline-block";
         if (spinner) spinner.style.display = "none";
@@ -525,7 +519,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (fileNameDisplay && fileMetaDisplay) {
       const sizeInMB = (file.size / (1024 * 1024)).toFixed(1);
       fileNameDisplay.innerText = file.name;
-      fileMetaDisplay.innerText = `PDF • ${sizeInMB > 0 ? sizeInMB : "0.5"} MB • Just now`;
+      fileMetaDisplay.innerText = `PDF • ${
+        sizeInMB > 0 ? sizeInMB : "0.5"
+      } MB • Just now`;
     }
     closeModal("modal-upload-resume");
   }
@@ -640,7 +636,6 @@ const notifFilterChips = document.querySelectorAll(
   ".notifications-action-bar .chip",
 );
 
-// Mark all as read button action
 if (btnMarkAllRead) {
   btnMarkAllRead.addEventListener("click", () => {
     notifCards.forEach((card) => {
@@ -655,7 +650,6 @@ if (btnMarkAllRead) {
   });
 }
 
-// Notification category filter tabs
 if (notifFilterChips.length > 0) {
   notifFilterChips.forEach((chip) => {
     chip.addEventListener("click", () => {
@@ -683,134 +677,6 @@ if (notifFilterChips.length > 0) {
 }
 
 // =========================================
-// OTP VERIFICATION (TAB SWITCH, AUTO-FOCUS, TIMER)
-// =========================================
-const otpTabs = document.querySelectorAll("#otp-tab-bar .auth-tab-btn");
-const otpSections = document.querySelectorAll(".otp-section");
-
-if (otpTabs.length > 0) {
-  otpTabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      otpTabs.forEach((t) => t.classList.remove("active"));
-      otpSections.forEach((s) => s.classList.remove("active"));
-
-      tab.classList.add("active");
-      const targetId = tab.getAttribute("data-target");
-      const targetSection = document.getElementById(targetId);
-      if (targetSection) {
-        targetSection.classList.add("active");
-        const firstInput = targetSection.querySelector(".otp-digit");
-        if (firstInput) firstInput.focus();
-      }
-    });
-  });
-}
-
-// 6-Digit Auto-Focus and Backspace Flow
-const otpGroups = document.querySelectorAll(".otp-inputs-grid");
-otpGroups.forEach((group) => {
-  const inputs = group.querySelectorAll(".otp-digit");
-
-  inputs.forEach((input, index) => {
-    input.addEventListener("input", (e) => {
-      // फक्त numbers allow करणे
-      input.value = input.value.replace(/[^0-9]/g, "");
-
-      if (input.value && index < inputs.length - 1) {
-        inputs[index + 1].focus();
-      }
-    });
-
-    input.addEventListener("keydown", (e) => {
-      if (e.key === "Backspace" && !input.value && index > 0) {
-        inputs[index - 1].focus();
-      }
-    });
-
-    // Paste Handle (उदा. 6 अंकी कोड कॉपी-पेस्ट केल्यास)
-    input.addEventListener("paste", (e) => {
-      e.preventDefault();
-      const pasteData = e.clipboardData
-        .getData("text")
-        .trim()
-        .slice(0, inputs.length);
-      if (/^\d+$/.test(pasteData)) {
-        pasteData.split("").forEach((char, i) => {
-          if (inputs[i]) inputs[i].value = char;
-        });
-        const nextFocus = Math.min(pasteData.length, inputs.length - 1);
-        inputs[nextFocus].focus();
-      }
-    });
-  });
-});
-
-// Countdown Timer Helper
-function startOtpCountdown(timerId, btnId, seconds = 45) {
-  const timerDisplay = document.getElementById(timerId);
-  const resendBtn = document.getElementById(btnId);
-  if (!timerDisplay || !resendBtn) return;
-
-  let timeLeft = seconds;
-  resendBtn.disabled = true;
-
-  const interval = setInterval(() => {
-    timeLeft--;
-    const mins = String(Math.floor(timeLeft / 60)).padStart(2, "0");
-    const secs = String(timeLeft % 60).padStart(2, "0");
-    timerDisplay.innerText = `${mins}:${secs}`;
-
-    if (timeLeft <= 0) {
-      clearInterval(interval);
-      timerDisplay.innerText = "00:00";
-      resendBtn.disabled = false;
-    }
-  }, 1000);
-}
-
-// Start timers on load
-if (document.getElementById("email-timer")) {
-  startOtpCountdown("email-timer", "btn-resend-email", 45);
-}
-if (document.getElementById("phone-timer")) {
-  startOtpCountdown("phone-timer", "btn-resend-phone", 45);
-}
-
-// Resend Actions
-const btnResendEmail = document.getElementById("btn-resend-email");
-const btnResendPhone = document.getElementById("btn-resend-phone");
-
-if (btnResendEmail) {
-  btnResendEmail.addEventListener("click", () => {
-    startOtpCountdown("email-timer", "btn-resend-email", 45);
-  });
-}
-
-if (btnResendPhone) {
-  btnResendPhone.addEventListener("click", () => {
-    startOtpCountdown("phone-timer", "btn-resend-phone", 45);
-  });
-}
-
-// Form Submits -> Redirect to Home/Profile
-const formVerifyEmail = document.getElementById("form-verify-email-otp");
-const formVerifyPhone = document.getElementById("form-verify-phone-otp");
-
-if (formVerifyEmail) {
-  formVerifyEmail.addEventListener("submit", (e) => {
-    e.preventDefault();
-    window.location.href = "index.html";
-  });
-}
-
-if (formVerifyPhone) {
-  formVerifyPhone.addEventListener("submit", (e) => {
-    e.preventDefault();
-    window.location.href = "profile.html";
-  });
-}
-
-// =========================================
 // JOB DETAILS PAGE LOGIC
 // =========================================
 const btnTriggerApplyModal = document.getElementById("btn-trigger-apply-modal");
@@ -819,7 +685,6 @@ const btnJobBookmark = document.getElementById("btn-job-bookmark");
 const btnStickyBookmark = document.getElementById("btn-sticky-bookmark");
 const btnShareJob = document.getElementById("btn-share-job");
 
-// Open 1-Click Apply Modal
 if (btnTriggerApplyModal) {
   btnTriggerApplyModal.addEventListener("click", () => {
     const modal = document.getElementById("modal-quick-apply");
@@ -830,7 +695,6 @@ if (btnTriggerApplyModal) {
   });
 }
 
-// Submit Application Handler
 if (formQuickApply) {
   formQuickApply.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -839,7 +703,6 @@ if (formQuickApply) {
   });
 }
 
-// Bookmark toggling in Job Detail
 function toggleJobBookmark(btn) {
   if (!btn) return;
   const icon = btn.querySelector("i");
@@ -862,7 +725,6 @@ if (btnStickyBookmark) {
   );
 }
 
-// Native Web Share API
 if (btnShareJob) {
   btnShareJob.addEventListener("click", async () => {
     if (navigator.share) {
@@ -872,12 +734,170 @@ if (btnShareJob) {
           text: "Check out this open role on NexusJobs!",
           url: window.location.href,
         });
-      } catch (err) {
-        // Share dismiss
-      }
+      } catch (err) {}
     } else {
       navigator.clipboard.writeText(window.location.href);
       alert("Job link copied to clipboard!");
     }
   });
 }
+
+// =========================================
+// SETTINGS SLIDE DRAWER CONTROLLER
+// =========================================
+const openSettingsSidebarBtn = document.getElementById(
+  "open-settings-sidebar-btn",
+);
+const closeSettingsDrawerBtn = document.getElementById(
+  "close-settings-drawer-btn",
+);
+const settingsDrawer = document.getElementById("settings-drawer");
+const settingsDrawerBackdrop = document.getElementById(
+  "settings-drawer-backdrop",
+);
+
+function openSettingsDrawer() {
+  if (settingsDrawer && settingsDrawerBackdrop) {
+    settingsDrawerBackdrop.classList.add("active");
+    settingsDrawer.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+}
+
+function closeSettingsDrawer() {
+  if (settingsDrawer && settingsDrawerBackdrop) {
+    settingsDrawer.classList.remove("active");
+    settingsDrawerBackdrop.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+}
+
+if (openSettingsSidebarBtn) {
+  openSettingsSidebarBtn.addEventListener("click", openSettingsDrawer);
+}
+
+if (closeSettingsDrawerBtn) {
+  closeSettingsDrawerBtn.addEventListener("click", closeSettingsDrawer);
+}
+
+if (settingsDrawerBackdrop) {
+  settingsDrawerBackdrop.addEventListener("click", closeSettingsDrawer);
+}
+
+// Open modals directly from Drawer
+const drawerBtnEditProfile = document.getElementById("drawer-btn-edit-profile");
+const drawerBtnUploadResume = document.getElementById(
+  "drawer-btn-upload-resume",
+);
+
+if (drawerBtnEditProfile) {
+  drawerBtnEditProfile.addEventListener("click", () => {
+    closeSettingsDrawer();
+    setTimeout(() => openModal("modal-edit-profile"), 200);
+  });
+}
+
+if (drawerBtnUploadResume) {
+  drawerBtnUploadResume.addEventListener("click", () => {
+    closeSettingsDrawer();
+    setTimeout(() => openModal("modal-upload-resume"), 200);
+  });
+}
+
+// =========================================
+// PRIVACY & TERMS TAB SWITCHER
+// =========================================
+const legalTabBtns = document.querySelectorAll(".legal-tabs-wrapper .chip");
+const legalSections = document.querySelectorAll(".legal-section");
+
+if (legalTabBtns.length > 0) {
+  legalTabBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      legalTabBtns.forEach((b) => b.classList.remove("active"));
+      legalSections.forEach((sec) => sec.classList.remove("active"));
+
+      btn.classList.add("active");
+      const targetId = btn.getAttribute("data-legal");
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        targetSection.classList.add("active");
+      }
+    });
+  });
+}
+
+// =========================================
+// COMPANIES PAGE (LIVE SEARCH & FILTERING)
+// =========================================
+const companySearchInput = document.getElementById("company-search-input");
+const companyCards = document.querySelectorAll(".company-showcase-card");
+const companyFilterChips = document.querySelectorAll("[data-company-filter]");
+
+// 1. Category Filter Chips
+if (companyFilterChips.length > 0) {
+  companyFilterChips.forEach((chip) => {
+    chip.addEventListener("click", () => {
+      companyFilterChips.forEach((c) => c.classList.remove("active"));
+      chip.classList.add("active");
+
+      const filterValue = chip.getAttribute("data-company-filter");
+
+      companyCards.forEach((card) => {
+        const categories = card.getAttribute("data-category") || "";
+        if (filterValue === "all" || categories.includes(filterValue)) {
+          card.style.display = "flex";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  });
+}
+
+// 2. Live Instant Search Bar
+if (companySearchInput) {
+  companySearchInput.addEventListener("input", (e) => {
+    const query = e.target.value.toLowerCase().trim();
+
+    companyCards.forEach((card) => {
+      const cardText = card.textContent.toLowerCase();
+      if (cardText.includes(query)) {
+        card.style.display = "flex";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
+}
+
+/* =========================================================
+   PREMIUM MICRO-INTERACTIONS
+   ========================================================= */
+document.addEventListener("DOMContentLoaded", () => {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduceMotion) return;
+
+  document.querySelectorAll(".job-card,.company-card,.bento-card,.stat-card,.auth-glass-card,.panel").forEach((el) => {
+    el.addEventListener("pointermove", (e) => {
+      const r = el.getBoundingClientRect();
+      const x = ((e.clientX - r.left) / r.width) * 100;
+      const y = ((e.clientY - r.top) / r.height) * 100;
+      el.style.setProperty("--mx", `${x}%`);
+      el.style.setProperty("--my", `${y}%`);
+    });
+  });
+
+  const reveal = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("premium-visible");
+        reveal.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll(".job-card,.company-card,.bento-card,.stat-card").forEach((el) => {
+    el.classList.add("premium-reveal");
+    reveal.observe(el);
+  });
+});

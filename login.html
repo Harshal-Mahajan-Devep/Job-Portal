@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="mr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NexusJobs - Welcome to Nexus</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Remix Icon CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-theme="dark" class="auth-body">
+    <!-- Ambient Glow Effects -->
+    <div class="ambient-glow glow-top-left"></div>
+    <div class="ambient-glow glow-top-right"></div>
+
+    <!-- Auth Header -->
+    <header class="navbar-header auth-navbar">
+      <a
+        href="index.html"
+        class="brand"
+        style="text-decoration: none; color: inherit"
+      >
+        <div class="brand-icon"><i class="ri-flashlight-fill"></i></div>
+        <span>Nexus<strong>Jobs</strong></span>
+      </a>
+
+      <div class="header-actions">
+        <button id="theme-btn" class="icon-btn" aria-label="Toggle Theme">
+          <i class="ri-sun-line" id="theme-icon"></i>
+        </button>
+      </div>
+    </header>
+
+    <main class="auth-container">
+      <div class="auth-glass-card">
+        <!-- Auth Tab Switcher -->
+        <div class="auth-tabs" id="auth-tab-bar">
+          <button
+            class="auth-tab-btn active"
+            id="tab-login"
+            data-tab="login-form"
+          >
+            Sign In
+          </button>
+          <button
+            class="auth-tab-btn"
+            id="tab-register"
+            data-tab="register-form"
+          >
+            Create Account
+          </button>
+        </div>
+
+        <!-- 1. LOGIN FORM -->
+        <form id="login-form" class="auth-form active">
+          <div class="auth-header-text">
+            <h2>Welcome Back</h2>
+            <p>Access your curated job feed, applications, and saved roles.</p>
+          </div>
+
+          <div class="form-group">
+            <label for="login-email">Work Email</label>
+            <div class="auth-input-wrapper">
+              <i class="ri-mail-line input-icon"></i>
+              <input
+                type="email"
+                id="login-email"
+                placeholder="name@company.com"
+                required
+                autocomplete="email"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="label-with-action">
+              <label for="login-password">Password</label>
+              <button
+                type="button"
+                class="forgot-link-btn"
+                id="btn-goto-forgot"
+              >
+                Forgot?
+              </button>
+            </div>
+            <div class="auth-input-wrapper">
+              <i class="ri-lock-2-line input-icon"></i>
+              <input
+                type="password"
+                id="login-password"
+                placeholder="••••••••"
+                required
+                autocomplete="current-password"
+              />
+              <button
+                type="button"
+                class="toggle-pwd-btn"
+                aria-label="Show password"
+              >
+                <i class="ri-eye-off-line"></i>
+              </button>
+            </div>
+          </div>
+
+          <a
+            href="verify-otp.html"
+            type="submit"
+            class="btn-primary-gradient auth-submit-btn"
+          >
+            Sign In <i class="ri-arrow-right-line"></i>
+          </a>
+
+          <div class="auth-divider">
+            <span>or continue with</span>
+          </div>
+
+          <div class="social-auth-row">
+            <button type="button" class="social-btn">
+              <i class="ri-google-fill"></i> Google
+            </button>
+            <button type="button" class="social-btn">
+              <i class="ri-github-fill"></i> GitHub
+            </button>
+          </div>
+        </form>
+
+        <!-- 2. REGISTER FORM -->
+        <form id="register-form" class="auth-form">
+          <div class="auth-header-text">
+            <h2>Join the Elite Network</h2>
+            <p>
+              Connect with high-growth companies and discover verified tech
+              roles.
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label for="reg-name">Full Name</label>
+            <div class="auth-input-wrapper">
+              <i class="ri-user-3-line input-icon"></i>
+              <input
+                type="text"
+                id="reg-name"
+                placeholder="Harshal Mahajan"
+                required
+                autocomplete="name"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="reg-email">Work Email</label>
+            <div class="auth-input-wrapper">
+              <i class="ri-mail-line input-icon"></i>
+              <input
+                type="email"
+                id="reg-email"
+                placeholder="name@domain.com"
+                required
+                autocomplete="email"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="reg-password">Password</label>
+            <div class="auth-input-wrapper">
+              <i class="ri-lock-2-line input-icon"></i>
+              <input
+                type="password"
+                id="reg-password"
+                placeholder="Create strong password"
+                required
+                autocomplete="new-password"
+              />
+              <button
+                type="button"
+                class="toggle-pwd-btn"
+                aria-label="Show password"
+              >
+                <i class="ri-eye-off-line"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Primary Role Track</label>
+            <div class="auth-input-wrapper">
+              <i class="ri-code-s-slash-line input-icon"></i>
+              <select id="reg-role" class="auth-select">
+                <option value="fullstack">Full Stack Developer</option>
+                <option value="frontend">Frontend Architect</option>
+                <option value="backend">Backend & Distributed Systems</option>
+                <option value="ai-ml">AI / ML Engineer</option>
+                <option value="design">UI/UX & Product Design</option>
+              </select>
+            </div>
+          </div>
+
+          <a
+            href="verify-otp.html"
+            type="submit"
+            class="btn-primary-gradient auth-submit-btn"
+          >
+            Create Free Account <i class="ri-arrow-right-line"></i>
+          </a>
+
+          <div class="auth-divider">
+            <span>or sign up with</span>
+          </div>
+
+          <div class="social-auth-row">
+            <button type="button" class="social-btn">
+              <i class="ri-google-fill"></i> Google
+            </button>
+            <button type="button" class="social-btn">
+              <i class="ri-github-fill"></i> GitHub
+            </button>
+          </div>
+        </form>
+
+        <!-- 3. FORGOT PASSWORD FORM -->
+        <form id="forgot-form" class="auth-form">
+          <div class="auth-header-text">
+            <div class="forgot-icon-pill">
+              <i class="ri-key-2-line"></i>
+            </div>
+            <h2>Reset Password</h2>
+            <p>
+              Enter the email linked to your account and we’ll send you a
+              password recovery link.
+            </p>
+          </div>
+
+          <div
+            class="auth-alert-box"
+            id="reset-success-alert"
+            style="display: none"
+          >
+            <i class="ri-mail-check-line"></i>
+            <div>
+              <strong>Recovery Email Sent!</strong>
+              <p>Check your inbox for the password reset instructions.</p>
+            </div>
+          </div>
+
+          <div class="form-group" id="forgot-input-group">
+            <label for="forgot-email">Registered Email</label>
+            <div class="auth-input-wrapper">
+              <i class="ri-mail-line input-icon"></i>
+              <input
+                type="email"
+                id="forgot-email"
+                placeholder="name@company.com"
+                required
+                autocomplete="email"
+              />
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="btn-primary-gradient auth-submit-btn"
+            id="btn-submit-forgot"
+          >
+            Send Reset Link <i class="ri-send-plane-2-line"></i>
+          </button>
+
+          <div class="back-to-auth">
+            <button type="button" class="back-link-btn" id="btn-back-to-login">
+              <i class="ri-arrow-left-line"></i> Back to Sign In
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <script src="javascript.js"></script>
+  </body>
+</html>
