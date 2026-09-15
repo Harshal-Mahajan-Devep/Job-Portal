@@ -1000,7 +1000,7 @@ body::-webkit-scrollbar {
 /* =========================================
    MOBILE RESPONSIVENESS
    ========================================= */
-@media (max-width: 370px) {
+@media (max-width: 600px) {
   .ambient-glow {
     width: auto;
   }
@@ -1076,6 +1076,7 @@ body::-webkit-scrollbar {
 
   .dock-navigation {
     bottom: 14px;
+    padding: 0 5px !important;
   }
 
   .dock-wrapper {
@@ -1084,7 +1085,7 @@ body::-webkit-scrollbar {
   }
 
   .dock-item {
-    width: 40px;
+    width: 38px;
     height: 40px;
     font-size: 1.15rem;
   }
@@ -1249,7 +1250,7 @@ body::-webkit-scrollbar {
   color: #ef4444 !important;
 }
 
-@media (max-width: 370px) {
+@media (max-width: 600px) {
   .tracker-stepper {
     padding: 0.65rem 0.5rem;
   }
@@ -1858,7 +1859,7 @@ body::-webkit-scrollbar {
   cursor: pointer;
 }
 
-@media (max-width: 370px) {
+@media (max-width: 600px) {
   .profile-main-info {
     flex-direction: column;
     text-align: center;
@@ -2413,7 +2414,7 @@ body::-webkit-scrollbar {
   opacity: 0.6;
 }
 
-@media (max-width: 370px) {
+@media (max-width: 600px) {
   .otp-inputs-grid {
     gap: 0.4rem;
   }
@@ -3021,7 +3022,7 @@ body::-webkit-scrollbar {
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
 }
 
-@media (max-width: 370px) {
+@media (max-width: 600px) {
   .company-grid-enhanced {
     grid-template-columns: 1fr;
   }
@@ -3303,7 +3304,7 @@ body::-webkit-scrollbar {
   transform: translateY(-2px);
 }
 
-@media (max-width: 370px) {
+@media (max-width: 600px) {
   .settings-drawer {
     max-width: 85%;
   }
@@ -3586,7 +3587,7 @@ body::-webkit-scrollbar {
   gap: 1rem;
 }
 
-@media (max-width: 370px) {
+@media (max-width: 600px) {
   .ticket-grid {
     grid-template-columns: 1fr;
   }
